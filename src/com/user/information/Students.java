@@ -10,7 +10,9 @@ package com.user.information;
 
 import com.course.information.Course;
 
-public class Students extends Memeber{
+import java.io.Serializable;
+
+public class Students extends Memeber implements Serializable {
 
     private String major;
     private int grade;

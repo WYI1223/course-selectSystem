@@ -4,7 +4,9 @@ package com.user.information;
 
 import com.course.information.Course;
 
-public class Faculty extends Memeber{
+import java.io.Serializable;
+
+public class Faculty extends Memeber implements Serializable {
 
     Course[] courses;
 

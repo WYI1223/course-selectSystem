@@ -12,16 +12,23 @@ package com.course.information;
 
 import com.user.information.Faculty;
 import com.user.information.Students;
+
+import java.io.Serializable;
 import java.util.Date;
 
-public class Course implements Comparable{
+public class Course implements Comparable, Serializable {
     private String code;
     private String term;
 
+    private String AcademicLevel="Undergraduate";
+
     private int credits;
 
+    private Date startDate;
+    private Date endDate;
     private Date date;
     private String Grading;
+    private String location;
 
 
     private Faculty instructor;
@@ -38,13 +45,14 @@ public class Course implements Comparable{
     @Override
     public int compareTo(Object o) {
         Course course1 = (Course) o;
-        if (this.credits>course1.credits)
+        if (this.credits > course1.credits)
             return 1;
-        else if (this.credits==course1.credits)
+        else if (this.credits == course1.credits)
             return 0;
         else
             return -1;
     }
+
 
     public String callTerm(){
         return term;

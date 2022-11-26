@@ -3,8 +3,12 @@ package com.user.information;
 //名字：姓，名字，
 //年龄，ID
 
+import java.io.Serializable;
 
-public abstract class Memeber {
+
+
+public class Memeber implements Serializable {
+
     private String firstName;
     private String lastName;
     private int age;
