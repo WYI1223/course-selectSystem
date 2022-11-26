@@ -3,7 +3,7 @@ package com.user.information;
 //当前年级
 //已修课程
 
-import com.couse.information.Course;
+import com.course.information.Course;
 
 public class Students extends Memeber{
 

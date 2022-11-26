@@ -1,4 +1,4 @@
-package com.couse.information;
+package com.course.information;
 //课程父类
     //课程编号
     //课程老师
