@@ -1,7 +1,12 @@
 package com.user.information;
 //用户：学生
-//当前年级
-//已修课程
+    //当前年级
+
+    //当前学分
+    //已修课程
+        //加入已修课程
+        //删除已修课程
+    //加入选择课程
 
 import com.course.information.Course;
 
