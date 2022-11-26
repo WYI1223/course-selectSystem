@@ -1,6 +1,7 @@
 package com.course.information;
 //课程父类
     //课程编号
+    //前置课要求
     //课程老师
     //课程学生
     //课程学分，课程学分对比
