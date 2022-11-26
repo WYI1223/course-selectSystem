@@ -19,6 +19,8 @@ public class Course implements Comparable{
 
     private int credits;
 
+    private Date startDate;
+    private Data endDate;
     private Date date;
     private String Grading;
 
