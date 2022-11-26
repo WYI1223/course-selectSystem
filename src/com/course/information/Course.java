@@ -16,6 +16,7 @@ import java.util.Date;
 
 public class Course implements Comparable{
     private String code;
+    private String term;
 
     private int credits;
 
@@ -44,4 +45,11 @@ public class Course implements Comparable{
         else
             return -1;
     }
+
+    public String callTerm(){
+        return term;
+    }
+
+
+
 }

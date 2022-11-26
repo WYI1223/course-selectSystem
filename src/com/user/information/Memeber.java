@@ -4,7 +4,7 @@ package com.user.information;
 //年龄，ID
 
 
-public class Memeber {
+public abstract class Memeber {
     private String firstName;
     private String lastName;
     private int age;
