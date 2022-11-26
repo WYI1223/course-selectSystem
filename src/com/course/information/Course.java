@@ -33,6 +33,7 @@ import java.util.Date;
 
 public class Course implements Comparable, Serializable {
     private String code;
+    private String title;
     private String term;
 
     private String AcademicLevel="Undergraduate";
@@ -50,6 +51,9 @@ public class Course implements Comparable, Serializable {
 
     private Students[] students;
 
+    public String getTitle() {
+        return title;
+    }
 
     public int getCredits() {
         return credits;

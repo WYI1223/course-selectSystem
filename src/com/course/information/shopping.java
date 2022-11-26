@@ -1,4 +1,5 @@
 package com.course.information;
+//课程购物车
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -9,30 +10,30 @@ public class shopping extends Course{
     private String term;
     private String course;
     private boolean sameCourse;
-    private ArrayList<String> courseList;
+    private ArrayList<Course> courseList;
 
-    public boolean isSameCourse(String course) {
-        for (int i =0; i <courseList.size();i++){
-            if(courseList.get(i).toLowerCase(Locale.ROOT)==this.course.toLowerCase(Locale.ROOT)){return false;}
-
-        }
-        return true;
+    //判断是否存在相同课程
+    public boolean haveSameCourse(Course course) {
+        if (courseList.contains(course))
+            return true;
+        return false;
     }
 
-    public void addCourse(){
-        if (isSameCourse(course)==false) {
+    //添加新课程
+    public void addCourse(Course course){
+        if (haveSameCourse(course)==false) {
             courseList.add(course);
         }
     }
 
-    public void removeCourse(){
-        Scanner input = new Scanner(System.in);
-        String currentCourse = input.next();
-        if (isSameCourse(currentCourse)){
-            courseList.remove(currentCourse);
+    //删除课程
+    public void delCourse(Course course) {
+        if (haveSameCourse(course)) {
+            courseList.remove(course);
+        } else {
+            System.out.println(course.getTitle() + " is not exist in shopping cart.");
         }
     }
-
 
 
 
