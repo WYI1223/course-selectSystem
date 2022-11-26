@@ -8,7 +8,7 @@ import com.course.information.Course;
 public class Students extends Memeber{
 
     private int grade;
-
+    private int credits;
 
     private Course[] courseFinished;
     private Course[] courseSelect;
