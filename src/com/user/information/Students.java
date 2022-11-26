@@ -1,7 +1,6 @@
 package com.user.information;
 //用户：学生
     //当前年级
-
     //当前学分
     //已修课程
         //加入已修课程
@@ -17,6 +16,8 @@ public class Students extends Memeber implements Serializable {
     private String major;
     private int grade;
     private int credits;
+
+
 
     private Course[] courseFinished;
     private Course[] courseSelect;
