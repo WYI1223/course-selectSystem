@@ -14,8 +14,10 @@ import com.user.information.Faculty;
 import com.user.information.Students;
 import java.util.Date;
 
-public class Course implements Comparable{
+public class Course implements Comparable {
     private String code;
+
+    private String AcademicLevel="Undergraduate";
 
     private int credits;
 
@@ -37,9 +39,9 @@ public class Course implements Comparable{
     @Override
     public int compareTo(Object o) {
         Course course1 = (Course) o;
-        if (this.credits>course1.credits)
+        if (this.credits > course1.credits)
             return 1;
-        else if (this.credits==course1.credits)
+        else if (this.credits == course1.credits)
             return 0;
         else
             return -1;
