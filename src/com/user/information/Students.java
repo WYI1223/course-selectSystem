@@ -12,6 +12,7 @@ import com.course.information.Course;
 
 public class Students extends Memeber{
 
+    private String major;
     private int grade;
     private int credits;
 
