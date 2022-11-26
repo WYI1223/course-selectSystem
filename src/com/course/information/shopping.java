@@ -2,14 +2,12 @@ package com.course.information;
 //课程购物车
 
 import java.util.ArrayList;
-import java.util.Locale;
-import java.util.Scanner;
 
-public class shopping extends Course{
+public class shopping{
+
     private int credits;
     private String term;
     private String course;
-    private boolean sameCourse;
     private ArrayList<Course> courseList;
 
     //判断是否存在相同课程
@@ -23,6 +21,7 @@ public class shopping extends Course{
     public void addCourse(Course course){
         if (!haveSameCourse(course)) {
             courseList.add(course);
+            credits+=course.getCredits();
         }
     }
 
@@ -30,13 +29,26 @@ public class shopping extends Course{
     public void delCourse(Course course) {
         if (haveSameCourse(course)) {
             courseList.remove(course);
+            credits-=course.getCredits();
         } else {
             System.out.println(course.getTitle() + " is not exist in shopping cart.");
         }
     }
 
+    //计算购物车当前学分
+    public int reCredits(){
+        int temp = 0;
+        for (int i = 0; i < courseList.size(); i++) {
+            temp += courseList.get(i).getCredits();
+        }
+        credits = temp;
+        return credits;
+    }
 
-
-
-
+    //查看当前购物车学分
+    public int getCredits() {
+        return credits;
+    }
 }
+
+

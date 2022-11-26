@@ -2,7 +2,7 @@ package com.function;
 
 public class storeRead {
 
-    //single------------------
+    //single-------------------------
     //solo course Store to document
 
     //solo course Read from document
