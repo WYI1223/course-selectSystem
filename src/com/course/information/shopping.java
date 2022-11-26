@@ -21,7 +21,7 @@ public class shopping extends Course{
 
     //添加新课程
     public void addCourse(Course course){
-        if (haveSameCourse(course)==false) {
+        if (!haveSameCourse(course)) {
             courseList.add(course);
         }
     }
