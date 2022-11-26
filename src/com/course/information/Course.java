@@ -23,6 +23,7 @@ public class Course implements Comparable{
     private Data endDate;
     private Date date;
     private String Grading;
+    private String location;
 
 
     private Faculty instructor;
