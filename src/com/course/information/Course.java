@@ -12,9 +12,11 @@ package com.course.information;
 
 import com.user.information.Faculty;
 import com.user.information.Students;
+
+import java.io.Serializable;
 import java.util.Date;
 
-public class Course implements Comparable {
+public class Course implements Comparable, Serializable {
     private String code;
 
     private String AcademicLevel="Undergraduate";

@@ -4,7 +4,9 @@ package com.user.information;
 //年龄，ID
 
 
-public class Memeber {
+import java.io.Serializable;
+
+public class Memeber implements Serializable {
     private String firstName;
     private String lastName;
     private int age;
