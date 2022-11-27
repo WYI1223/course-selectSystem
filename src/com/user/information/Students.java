@@ -11,7 +11,7 @@ import com.course.information.Course;
 
 import java.io.Serializable;
 
-public class Students extends Memeber implements Serializable {
+public class Students extends Member implements Serializable {
 
     private String major;
     private int grade;
