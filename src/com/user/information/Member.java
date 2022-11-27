@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 
 
-public class Memeber implements Serializable {
+public class Member implements Serializable {
 
     private String firstName;
     private String lastName;
