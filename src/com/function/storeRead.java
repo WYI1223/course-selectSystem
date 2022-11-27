@@ -6,10 +6,15 @@ import com.user.information.Member;
 import java.io.*;
 
 public class storeRead {
-
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        Course course1 = new Course("111","222");
+//        serialize(course1);
+            deserialize(course1);
+            course1.toString();
+    }
     //single-------------------------
     //solo course Store to document
-    public void serialize(Course course) throws IOException{
+    public static void serialize(Course course) throws IOException{
         ObjectOutputStream objectOutputStream =
                 new ObjectOutputStream( new FileOutputStream( new File("course.txt") ) );
         objectOutputStream.writeObject( course );
@@ -19,16 +24,16 @@ public class storeRead {
         System.out.println("==============================================");
     }
     //solo course Read from document
-    public void deserialize(Course course) throws IOException, ClassNotFoundException {
+    public static void deserialize(Course course) throws IOException, ClassNotFoundException {
         ObjectInputStream objectInputStream =
                 new ObjectInputStream( new FileInputStream( new File("course.txt") ) );
         objectInputStream.close();
-
+        course = (Course) objectInputStream.readObject();
         System.out.println("反序列化结果为：");
         System.out.println( course );
     }
     //single Faculty store and read
-    public void serialize(Member member) throws IOException{
+    public static void serialize(Member member) throws IOException{
         ObjectOutputStream objectOutputStream =
                 new ObjectOutputStream( new FileOutputStream( new File("member.txt") ) );
         objectOutputStream.writeObject( member );
@@ -37,7 +42,7 @@ public class storeRead {
         System.out.println("序列化成功！已经生成member.txt文件");
         System.out.println("==============================================");
     }
-    public void deserialize( Member member ) throws IOException, ClassNotFoundException {
+    public static void deserialize( Member member ) throws IOException, ClassNotFoundException {
         ObjectInputStream objectInputStream =
                 new ObjectInputStream( new FileInputStream( new File("member.txt") ) );
         objectInputStream.close();
