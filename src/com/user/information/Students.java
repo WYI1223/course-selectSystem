@@ -10,24 +10,37 @@ package com.user.information;
 import com.course.information.Course;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Students extends Member implements Serializable {
 
     private String major;
     private int grade;
-    private int credits;
+    private int creditsTotal;
+    private int creditsAvailable;
 
-
-
-    private Course[] courseFinished;
+    private ArrayList<Course> courseList;
     private Course[] courseSelect;
 
+    //实现学生信息print（名字，id，专业，年级，总学分）
     public String toString(){
         return "Student name: "+firstName+lastName+'\''+
                 ", ID: "+ID+
                 ", Major: "+major+
                 ", Grade: "+grade+
-                ", Credits: "+credits;
+                ", Credits: "+creditsTotal;
     }
-    
+
+    public boolean isComplete(Course course){
+        if (courseList.contains(course)){
+            return true;
+        }
+        else
+            return false;
+    }
+
+
+    public int getCreditsAvailable() {
+        return creditsAvailable;
+    }
 }
