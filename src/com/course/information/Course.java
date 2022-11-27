@@ -78,6 +78,8 @@ public class Course implements Comparable, Serializable {
     public String callTerm(){
         return term;
     }
+
+    //对象序列化的实现
     public void serialize() throws IOException {
         FileOutputStream fos = new FileOutputStream(path);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
