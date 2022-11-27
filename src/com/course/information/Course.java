@@ -27,7 +27,6 @@ package com.course.information;
 
 import com.user.information.Faculty;
 import com.user.information.Students;
-
 import java.io.Serializable;
 import java.util.Date;
 
@@ -50,6 +49,11 @@ public class Course implements Comparable, Serializable {
     private Faculty instructor;
 
     private Students[] students;
+    public Course(String code,String title){
+            this.code = code;
+            this.title = title;
+    }
+
 
     public String getTitle() {
         return title;
