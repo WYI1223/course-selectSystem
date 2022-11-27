@@ -9,7 +9,7 @@ public class storeRead {
 
     //single-------------------------
     //solo course Store to document
-    public void serialize(Course course) throws IOException{
+    public static void serialize(Course course) throws IOException{
         ObjectOutputStream objectOutputStream =
                 new ObjectOutputStream( new FileOutputStream( new File("course.txt") ) );
         objectOutputStream.writeObject( course );
@@ -19,17 +19,17 @@ public class storeRead {
         System.out.println("==============================================");
     }
     //solo course Read from document
-    public static void deserializeCourse() throws IOException, ClassNotFoundException {
+    public static void deserializeCourse(Course course) throws IOException, ClassNotFoundException {
         ObjectInputStream objectInputStream =
-                new ObjectInputStream( new FileInputStream( new File("course.txt") ) );
-        Course course = (Course) objectInputStream.readObject();
+                new ObjectInputStream( new FileInputStream("data\\course\\information\\111.txt") );
+        course = (Course) objectInputStream.readObject();
         objectInputStream.close();
 
         System.out.println("反序列化结果为：");
         System.out.println(course);
     }
     //single Faculty store and read
-    public void serialize(Member member) throws IOException{
+    public static void serialize(Member member) throws IOException{
         ObjectOutputStream objectOutputStream =
                 new ObjectOutputStream( new FileOutputStream( new File("member.txt") ) );
         objectOutputStream.writeObject( member );
