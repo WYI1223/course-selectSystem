@@ -19,13 +19,14 @@ public class storeRead {
         System.out.println("==============================================");
     }
     //solo course Read from document
-    public void deserialize(Course course) throws IOException, ClassNotFoundException {
+    public static void deserializeCourse() throws IOException, ClassNotFoundException {
         ObjectInputStream objectInputStream =
                 new ObjectInputStream( new FileInputStream( new File("course.txt") ) );
+        Course course = (Course) objectInputStream.readObject();
         objectInputStream.close();
 
         System.out.println("反序列化结果为：");
-        System.out.println( course );
+        System.out.println(course);
     }
     //single Faculty store and read
     public void serialize(Member member) throws IOException{
@@ -37,13 +38,14 @@ public class storeRead {
         System.out.println("序列化成功！已经生成member.txt文件");
         System.out.println("==============================================");
     }
-    public void deserialize( Member member ) throws IOException, ClassNotFoundException {
+    public static void deserializeMember(  ) throws IOException, ClassNotFoundException {
         ObjectInputStream objectInputStream =
                 new ObjectInputStream( new FileInputStream( new File("member.txt") ) );
+        Member member = (Member) objectInputStream.readObject();
         objectInputStream.close();
 
         System.out.println("反序列化结果为：");
-        System.out.println( member );
+        System.out.println(member);
     }
     //single Students store and read
 
