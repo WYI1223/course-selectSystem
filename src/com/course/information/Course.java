@@ -32,20 +32,25 @@ import java.io.*;
 import java.util.Date;
 
 public class Course implements Comparable, Serializable {
-    private String code;
-    private String title;
-    private String term;
+    private String code,title,room;
     private String AcademicLevel="Undergraduate";
-    private int credits;
-    private Date startDate;
-    private Date endDate;
-    private Date date;
+    private int ID,credits;
+//        日期
+    private Date startDate,endDate;
+    private int[] Days;
+//         meeting时间
+    private Date startTime,endTime;
+    private int[] requisites;
     private String Grading;
-    private String location;
+    private int Capacity,Available;
     private Faculty instructor;
+    private Students[] students;
+//          文件位置
     private File path;
 
-    private Students[] students;
+    private static int[] allcourse;
+
+
     public Course(String code,String title){
             this.path = new File("data\\course\\information\\"+code+".txt");
             this.code = code;
@@ -75,10 +80,6 @@ public class Course implements Comparable, Serializable {
     }
 
 
-    public String callTerm(){
-        return term;
-    }
-
     //对象序列化的实现
     public void serialize() throws IOException {
         FileOutputStream fos = new FileOutputStream(path);
@@ -92,7 +93,7 @@ public class Course implements Comparable, Serializable {
     public String toString(){
         return "Course Code: "+this.code+'\''+
                 "title: "+this.title+
-                ", term: "+this.term+
+
                 ", credits: "+this.credits+
                 ", instructor: "+this.instructor+
                 ", period: "+this.startDate+" - "+this.endDate;
