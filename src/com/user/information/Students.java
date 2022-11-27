@@ -22,6 +22,12 @@ public class Students extends Member implements Serializable {
     private Course[] courseFinished;
     private Course[] courseSelect;
 
-
+    public String toString(){
+        return "Student name: "+firstName+lastName+'\''+
+                ", ID: "+ID+
+                ", Major: "+major+
+                ", Grade: "+grade+
+                ", Credits: "+credits;
+    }
     
 }

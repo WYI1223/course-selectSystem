@@ -49,6 +49,10 @@ public class shopping{
     public int getCredits() {
         return credits;
     }
+
+    public String toString(){
+        return "You have these courses in your cart: "+courseList;
+    }
 }
 
 

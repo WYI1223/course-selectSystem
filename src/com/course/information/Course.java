@@ -77,6 +77,13 @@ public class Course implements Comparable, Serializable {
         return term;
     }
 
+    public String toString(){
+        return "Course: "+this.title+'\''+
+                ", term: "+this.term+
+                ", credits: "+this.credits+
+                ", instructor: "+this.instructor+
+                ", period: "+this.startDate+" - "+this.endDate;
 
+    }
 
 }

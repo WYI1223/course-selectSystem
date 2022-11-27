@@ -9,6 +9,7 @@ import java.io.Serializable;
 public class Faculty extends Member implements Serializable {
 
     Course[] courses;
+    public int age;
 
 
 
