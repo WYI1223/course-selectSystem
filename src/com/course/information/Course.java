@@ -71,9 +71,9 @@ public class Course implements Comparable, Serializable {
     @Override
     public int compareTo(Object o) {
         Course course1 = (Course) o;
-        if (this.credits > course1.credits)
+        if (this.ID > course1.ID)
             return 1;
-        else if (this.credits == course1.credits)
+        else if (this.ID == course1.ID)
             return 0;
         else
             return -1;
