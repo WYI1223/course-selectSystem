@@ -20,10 +20,12 @@ package com.course.information;
         //9. Days: [1,3] 周一周三
         //10. Room: "*" 也就是位置
         //11. Requisites: id 是前置课，id是前置课的id
-        //12. Capacity: 课程容量
-        //13. Available: 可用座位
+        //12. Capacity: 课程容量（已实现）
+        //13. Available: 可用座位（已实现）
         //14. Faculty[]
         //15. Student[]
+        //16. isAvailable:是否可用（已实现）
+
 
 import com.user.information.Faculty;
 import com.user.information.Students;
@@ -34,7 +36,7 @@ import java.util.Date;
 public class Course implements Comparable, Serializable {
     private String code,title,room;
     private String AcademicLevel="Undergraduate";
-    private int ID,credits;
+    private int ID,credits,capacity,availableSeats;
 //        日期
     private Date startDate,endDate;
     private int[] Days;
@@ -47,6 +49,8 @@ public class Course implements Comparable, Serializable {
     private Students[] students;
 //          文件位置
     private File path;
+    private Course preCourse;
+    private boolean isAvailable;
 
     private static int[] allcourse;
 
@@ -99,4 +103,21 @@ public class Course implements Comparable, Serializable {
                 ", period: "+this.startDate+" - "+this.endDate;
     }
 
+    public Course getPreCourse() {
+        return preCourse;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public int getAvailableSeats() {
+        return availableSeats;
+    }
+
+    public void register(){
+        availableSeats = availableSeats-1;
+        if(availableSeats==0)
+            isAvailable=false;
+    }
 }
