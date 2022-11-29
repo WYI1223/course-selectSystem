@@ -4,6 +4,7 @@ package com.user.information;
 
 import com.course.information.Course;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Faculty extends Member implements Serializable {
 
