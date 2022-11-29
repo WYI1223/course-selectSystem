@@ -20,11 +20,10 @@ package com.course.information;
         //9. Days: [1,3] 周一周三
         //10. Room: "*" 也就是位置
         //11. Requisites: id 是前置课，id是前置课的id
-        //12. Capacity: 课程容量（已实现）
-        //13. Available: 可用座位（已实现）
+        //12. Capacity: 课程容量
+        //13. Available: 可用座位
         //14. Faculty[]
         //15. Student[]
-        //16. isAvailable:是否可用（已实现）
 
 import com.user.information.Faculty;
 import com.user.information.Students;
@@ -33,22 +32,25 @@ import java.io.*;
 import java.util.Date;
 
 public class Course implements Comparable, Serializable {
-    private String code;
-    private String title;
-    private String term;
+    private String code,title,room;
     private String AcademicLevel="Undergraduate";
-    private int credits,capacity,availableSeats;
-    private Date startDate;
-    private Date endDate;
-    private Date date;
+    private int ID,credits;
+//        日期
+    private Date startDate,endDate;
+    private int[] Days;
+//         meeting时间
+    private Date startTime,endTime;
+    private int[] requisites;
     private String Grading;
-    private String location;
+    private int Capacity,Available;
     private Faculty instructor;
-    private File path;
-    private boolean isAvailable;
-    private Course preCourse;
-
     private Students[] students;
+//          文件位置
+    private File path;
+
+    private static int[] allcourse;
+
+
     public Course(String code,String title){
             this.path = new File("data\\course\\information\\"+code+".txt");
             this.code = code;
@@ -64,40 +66,19 @@ public class Course implements Comparable, Serializable {
         return credits;
     }
 
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public int getAvailableSeats() {
-        return availableSeats;
-    }
-
-    public void register(){
-        availableSeats = availableSeats-1;
-        if(availableSeats==0)
-            isAvailable=false;
-    }
-
-    public Course getPreCourse() {
-        return preCourse;
-    }
 
     //comparable 接口实现
     @Override
     public int compareTo(Object o) {
         Course course1 = (Course) o;
-        if (this.credits > course1.credits)
+        if (this.ID > course1.ID)
             return 1;
-        else if (this.credits == course1.credits)
+        else if (this.ID == course1.ID)
             return 0;
         else
             return -1;
     }
 
-
-    public String callTerm(){
-        return term;
-    }
 
     //对象序列化的实现
     public void serialize() throws IOException {
@@ -112,12 +93,10 @@ public class Course implements Comparable, Serializable {
     public String toString(){
         return "Course Code: "+this.code+'\''+
                 "title: "+this.title+
-                ", term: "+this.term+
+
                 ", credits: "+this.credits+
                 ", instructor: "+this.instructor+
                 ", period: "+this.startDate+" - "+this.endDate;
     }
-
-
 
 }

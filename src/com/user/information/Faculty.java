@@ -3,14 +3,18 @@ package com.user.information;
 //
 
 import com.course.information.Course;
-
 import java.io.Serializable;
 
 public class Faculty extends Member implements Serializable {
 
-    Course[] courses;
+    ArrayList<Course> courses = new ArrayList<>();
     public int age;
 
+    public void addCourse(Course i){
+        courses.add(i);
+    }
+
+   
 
 
 
