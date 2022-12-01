@@ -43,6 +43,6 @@ def get_course_info_list() -> list:
                 'description': str(course['Course']['Description']),  # 课程描述
                 'comments': str(course['Comments']),  # 课程备注，非常重要！包含了对专业的限制
             }
-            # print(page, formatted_course)
+            print(page, formatted_course)
             course_info_list.append(formatted_course)
     return course_info_list

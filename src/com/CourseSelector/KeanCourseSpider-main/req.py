@@ -13,7 +13,7 @@ import json
 max_page_num = 24
 url = 'https://selfservice.kean.edu/Student/Courses/SearchAsync'
 headers = {
-    '__RequestVerificationToken':'u8PvvX-2pIBYsOSXRHkeAukzILMsf_j3vR4iRZmM0TSElzFB4Xi1QJ5nDmiPf6iOPRNeQUU6lQG4ktTdY9abi4QKplJsyPvoC3Zmfm_qdGg1',
+    '__RequestVerificationToken':'c8fyuzBPNyzkAIWOWk7I4bdBSlu9Jn93dCIRE9uJxfyABRj8nG_GYW0ck7w_vsJy1mH5Rd3e-4K0qirvOwgiSnWWhxYJ7rwNyyzXTmPh4MU1',
     'Accept': 'application/json, text/javascript, */*; q=0.01',
     'Accept-Encoding': 'gzip, deflate, br',
     'Accept-Language': 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
@@ -44,13 +44,26 @@ for page_number in range(1, max_page_num + 1):
                                   "\"startsAtTime\":null,\"endsByTime\":null,\"pageNumber\":1,\"sortOn\":\"SectionName\",\"sortDirection\":\"Ascending\","
                                   "\"subRequirementText\":null,\"quantityPerPage\":30,\"openAndWaitlistedSections\":null,\"searchResultsView\":\"SectionListing\"}"}
 
-    payload2 = {"searchParameters":"{\"keyword\":null,\"terms\":[\"23/SPWZ\"],\"requirement\":null,\"subrequirement\":null,\"courseIds\":null,\"sectionIds\":null,\"requirementText\":null,"
+    payload2 = {"searchParameters":"{\"keyword\":null,\"terms\":[],\"requirement\":null,\"subrequirement\":null,\"courseIds\":null,\"sectionIds\":null,\"requirementText\":null,"
                                    "\"subrequirementText\":\"\",\"group\":null,\"startTime\":null,\"endTime\":null,\"openSections\":null,\"subjects\":[\"CPS\"],\"academicLevels\":[],"
                                    "\"courseLevels\":[],\"synonyms\":[],\"courseTypes\":[],\"topicCodes\":[],\"days\":[],\"locations\":[],\"faculty\":[],\"onlineCategories\":null,"
                                    "\"keywordComponents\":[],\"startDate\":null,\"endDate\":null,\"startsAtTime\":null,\"endsByTime\":null,\"pageNumber\":1,\"sortOn\":\"None\","
                                    "\"sortDirection\":\"Ascending\",\"subRequirementText\":null,\"quantityPerPage\":30,\"openAndWaitlistedSections\":null,\"searchResultsView\":\"CatalogListing\"}"}
 
-    r = requests.post(url=url, headers=headers, data=json.dumps(payload2), verify=False)
+    payload3 = {"searchParameters":
+                   "{\"keyword\":null,\"terms\":[\"23/SPWZ\"],\"requirement\":null,\"subrequirement\":null,"
+                   "\"courseIds\":null,\"sectionIds\":null,\"requirementText\":null,\"subrequirementText\":\"\","
+                   "\"group\":null,\"startTime\":null,\"endTime\":null,\"openSections\":null,\"subjects\":[\"CPS\"],"
+                   "\"academicLevels\":[],\"courseLevels\":[],\"synonyms\":[],\"courseTypes\":[],\"topicCodes\":[],"
+                   "\"days\":[\"1\",\"2\",\"3\",\"4\",\"5\"],\"locations\":[],\"faculty\":[],\"onlineCategories\":null,"
+                   "\"keywordComponents\":[],\"startDate\":null,\"endDate\":null,\"startsAtTime\":null,"
+                   f"\"endsByTime\":null,\"pageNumber\": {page_number},\"sortOn\":\"SectionName\","
+                   "\"sortDirection\":\"Ascending\", "
+                   "\"subRequirementText\":null,\"quantityPerPage\":30,\"openAndWaitlistedSections\":null,"
+                   "\"searchResultsView\":\"SectionListing\"} "
+               }
+
+    r = requests.post(url=url, headers=headers, data=json.dumps(payload3), verify=False)
     print(r.content.decode(encoding='utf-8'))
     # 先保存后续在本地处理，不浪费时间，对这个cookie有心理阴影。
     with open(f'info/searchInfo_{page_number}.json', 'w+', encoding='utf-8') as file:
