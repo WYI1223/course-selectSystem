@@ -34,7 +34,13 @@
    4. 多种类排序（自定义排序）
       1. 按照时间，学分，课程ID，课程编号
    5. 特殊化ADT，如BST
-
+## 新增 12.04
+- 将course所有方法实现调用course对象序列化存储
+- 构建course调用反序列化，如果不存在则创建一个新的对象，存在则读取反序列化中的对象
+- 将linklist复写，新写方法如重新排序，按....来
+- 购物车作为一个linklist可以存入course类的对象
+  - 在浏览课程列表时，可以将课程列表中即Arraylist中的对象存入购物车中即Linklist
+  - 实现linklist的toString输出。
 
 
 ## version1
