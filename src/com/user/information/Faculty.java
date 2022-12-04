@@ -1,6 +1,8 @@
 package com.user.information;
 //用户：教师
-
+//方法：取消教授所属的课程
+//方法：显示学生列表
+//
 
 import com.course.information.Course;
 import java.io.Serializable;

@@ -3,14 +3,15 @@ package com.user.information;
     //当前年级
     //当前学分
     //已修课程
-        //加入已修课程
-        //删除已修课程
-    //加入选择课程
+    //加入已修课程（查重）
+    //删除已修课程
+    //加入选择课程（给与反馈）
 
 import com.course.information.Course;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+
 
 public class Students extends Member implements Serializable {
 
@@ -23,19 +24,21 @@ public class Students extends Member implements Serializable {
     private ArrayList<Course> courseList;
     private Course[] courseSelect;
 
+
     //实现学生信息print（名字，id，专业，年级，总学分）
     public String toString(){
-        return "Student name: "+firstName+lastName+'\''+
+        return "Student name: "+firstName+" "+lastName+'\''+
                 ", ID: "+ID+
                 ", Major: "+major+
                 ", Grade: "+grade+
                 ", Credits: "+creditsTotal;
     }
-    public Students(int id,String fname,String lname,int grades){
+    public Students(int id,String fname,String lname,int grades,String major){
         this.ID = id;
         this.firstName = fname;
         this.lastName = lname;
         this.grade = grades;
+        this.major = major;
     }
 
     public boolean isComplete(Course course){
