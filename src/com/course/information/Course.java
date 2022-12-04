@@ -9,7 +9,7 @@ package com.course.information;
     //课程打分模式
     //课程教师
         //1. Code:"23/SPWZ" 23年 温州 春季学期
-        //2. ID: "256354" 课程ID
+        //2. ID: "2232" 课程ID
         //3. Title: "MICROCOMPUTER APPLICATIONS" 课程名称
         //4. Number:"W02" 这个也就是Section
         //5. AcademicLevel: "Undergraduate" 学术等级 本科生
