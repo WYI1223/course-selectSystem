@@ -9,7 +9,7 @@ package com.course.information;
     //课程打分模式
     //课程教师
         //1. Code:"23/SPWZ" 23年 温州 春季学期
-        //2. ID: "256354" 课程ID
+        //2. ID: "2232" 课程ID
         //3. Title: "MICROCOMPUTER APPLICATIONS" 课程名称
         //4. Number:"W02" 这个也就是Section
         //5. AcademicLevel: "Undergraduate" 学术等级 本科生
@@ -22,7 +22,7 @@ package com.course.information;
         //11. Requisites: id 是前置课，id是前置课的id
         //12. Capacity: 课程容量（已实现）
         //13. Available: 可用座位（已实现）
-        //14. Faculty[]
+        //14. Faculty
         //15. Student[]
         //16. isAvailable:是否可用（已实现）
 
@@ -31,7 +31,9 @@ import com.user.information.Faculty;
 import com.user.information.Students;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Date;
+
 
 public class Course implements Comparable, Serializable {
     private String code,title,room;
@@ -46,7 +48,9 @@ public class Course implements Comparable, Serializable {
     private String Grading;
     private int Capacity,Available;
     private Faculty instructor;
-    private Students[] students;
+    private Students students;
+    private ArrayList StudentsList; //储存学生
+
 //          文件位置
     private File path;
     private Course preCourse;
@@ -115,9 +119,23 @@ public class Course implements Comparable, Serializable {
         return availableSeats;
     }
 
+    //注册课程，并对使用者进行反馈
     public void register(){
-        availableSeats = availableSeats-1;
-        if(availableSeats==0)
-            isAvailable=false;
+        if(availableSeats==0) {
+            isAvailable = false;
+            System.out.println("The course is full");
+        }
+        else {
+            availableSeats = availableSeats - 1;
+            StudentsList.add(students);
+        }
     }
+
+    public void printStu(){
+        for (int i = 0; i<StudentsList.size();i++){
+            StudentsList.get(i).toString();
+        }
+    }
+
+
 }

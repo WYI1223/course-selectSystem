@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class Students extends Member implements Serializable {
 
     private String major;
+    private int id;
     private int grade;
     private int creditsTotal;
     private int creditsAvailable;
@@ -30,6 +31,12 @@ public class Students extends Member implements Serializable {
                 ", Grade: "+grade+
                 ", Credits: "+creditsTotal;
     }
+    public Students(int id,String fname,String lname,int grades){
+        this.ID = id;
+        this.firstName = fname;
+        this.lastName = lname;
+        this.grade = grades;
+    }
 
     public boolean isComplete(Course course){
         if (courseList.contains(course)){
@@ -42,5 +49,12 @@ public class Students extends Member implements Serializable {
 
     public int getCreditsAvailable() {
         return creditsAvailable;
+    }
+
+    public static void main(String[] args) {
+        //学生可在此程序运行的方法
+        //1.添加课程（课程会筛查重复时间以及内容）
+        //2.删除课程
+        //打印课程表
     }
 }

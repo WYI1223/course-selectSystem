@@ -10,6 +10,7 @@ public class shopping{
     private String term;
     private String course;
     private Students students;
+
     private ArrayList<Course> courseList;
 
     //判断课程是否冲突
@@ -20,11 +21,13 @@ public class shopping{
     public boolean check(){
         boolean check1 = false;
         boolean check2 = false;
+
         for(int i =0;i<courseList.size();i++){
             if (students.isComplete(courseList.get(i).getPreCourse())){
                 check1 = true;
             }
         }
+
         if (this.credits>students.getCreditsAvailable()){
             if (haveSameCourse()){
                 for (int i = 0; i<courseList.size();i++){
@@ -57,7 +60,7 @@ public class shopping{
     }
     //添加新课程
     public void addCourse(Course course){
-        if (!haveSameCourse(course)) {
+        if (!haveSameCourse(course)&&credits<=19) {
             courseList.add(course);
             credits+=course.getCredits();
         }
@@ -91,11 +94,13 @@ public class shopping{
     public String toString(){
         return "You have these courses in your cart: "+courseList;
     }
+
     //实现在不考虑冲突的情况下，注册所有购物车内课程
     public void register(){
         for(int i =0; i<=courseList.size(); i++){
             courseList.get(i).register();
         }
+
     }
 }
 

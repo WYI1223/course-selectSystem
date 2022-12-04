@@ -13,7 +13,5 @@ public class Test {
         course1.serialize();
         Course course2 = new Course("222","333");
         deserializeCourse(course2);
-
-
     }
 }
