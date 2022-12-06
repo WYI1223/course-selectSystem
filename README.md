@@ -1,6 +1,46 @@
 # course-selectSystem
  2232FinalProject
+## 运行起来是什么样的
 
+1. 运行
+````
+选课系统
+选择下列选项
+1. 浏览课程表
+2. 浏览当前购物车
+````
+````
+1.浏览课程表
+--------
+选择如何排序
+1.按照level排序
+2.按照学分排序
+3.按照可用位置排序
+4.按照时间排序
+--------
+````
+````
+1. 浏览课程表(Level)
+-------
+1. term:23/SPWZ|Course: CPS*2231-W05|Instructor:Ken|availableSeats:10 | Date: 2023.2.14-2023.6.30 | days:1,3 | time: 7:00-8:15
+2. term:23/SPWZ|Course: CPS*2390-W05|Instructor:baha|availableSeats:12 | Date: 2023.2.14-2023.6.30 | days:1,3 | time: 7:00-8:15
+3. term:23/SPWZ|Course: CPS*3520-W01|Instructor:Abuajia|availableSeats:5 | Date: 2023.2.14-2023.6.30 | days:1,3 | time: 7:00-8:15
+4. term:23/SPWZ|Course: CPS*2231-W05|Instructor:Ken|availableSeats:5 | Date: 2023.2.14-2023.6.30 | days:1,3 | time: 7:00-8:15
+5. term:23/SPWZ|Course: CPS*2231-W05|Instructor:Ken|availableSeats:0 | Date: 2023.2.14-2023.6.30 | days:1,3 | time: 7:00-8:15
+-------
+0.上一页 1.下一页 2.加入将序号（）加入课程购物车 3.进入课程购物车 4.返回首页
+````
+
+````
+2.浏览当前购物车
+-------
+1. term:23/SPWZ|Course: CPS*2231-W05|Instructor:Ken|availableSeats:10 | Date: 2023.2.14-2023.6.30 | days:1,3 | time: 7:00-8:15
+2. term:23/SPWZ|Course: CPS*2390-W05|Instructor:baha|availableSeats:12 | Date: 2023.2.14-2023.6.30 | days:1,3 | time: 7:00-8:15
+3. term:23/SPWZ|Course: CPS*3520-W01|Instructor:Abuajia|availableSeats:5 | Date: 2023.2.14-2023.6.30 | days:1,3 | time: 7:00-8:15
+-------
+当前购物车学分：9 
+1. 删除序号（）课程 2.浏览课程表 3.返回首页
+````
 
 ## 整体结构的初步构想
 - data文件夹
