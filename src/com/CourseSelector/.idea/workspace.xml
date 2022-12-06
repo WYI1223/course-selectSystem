@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ddd06a6-0381-4bfc-a17a-d738d4ff3619" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../course/information/CourseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KeanCourseSpider-main/req.py" beforeDir="false" afterPath="$PROJECT_DIR$/KeanCourseSpider-main/req.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +54,7 @@
       <updated>1669709541125</updated>
       <workItem from="1669709542297" duration="5258000" />
       <workItem from="1669717876785" duration="2562000" />
+      <workItem from="1670326433812" duration="2326000" />
     </task>
     <servers />
   </component>
