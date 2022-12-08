@@ -61,9 +61,9 @@ public class Course implements Comparable, Serializable {
     private static int[] allcourse;
 
 
-    public Course(String code,String title){
-            this.path = new File("data\\course\\information\\"+code+".txt");
-            this.code = code;
+    public Course(int ID,String title){
+            this.path = new File("data\\course\\information\\"+ID+title+".txt");
+            this.ID = ID;
             this.title = title;
     }
 
@@ -71,6 +71,10 @@ public class Course implements Comparable, Serializable {
 
     public String getTitle() {
         return title;
+    }
+
+    public int getID() {
+        return ID;
     }
 
     public int getCredits() {
@@ -113,14 +117,13 @@ public class Course implements Comparable, Serializable {
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(this);
         oos.close();
-        System.out.println("序列化成功！已经生成course.txt文件");
+        System.out.println("序列化成功！已经生成"+getID()+getTitle()+".txt"+"文件");
         System.out.println("==============================================");
     }
 
     public String toString(){
-        return "Course Code: "+this.code+'\''+
-                "title: "+this.title+
-
+        return "Course ID: "+this.ID+'\''+
+                ",title: "+this.title+
                 ", credits: "+this.credits+
                 ", instructor: "+this.instructor+
                 ", period: "+this.startDate+" - "+this.endDate;
