@@ -17,16 +17,23 @@ def get_course_info_list() -> list:
         # 建筑系课程工作室时段无法正常显示。建筑系课程特殊，暂不考虑。
         def get_meeting_info(course_info: dict) -> dict:
             days = []
-            time = []
+            starttime=[]
+            endtime = []
+            startdate = []
+            enddate = []
             res = {
                 'days': days,
-                'time': time,
+                'starttime':starttime,
+                'endtime':endtime,
+                
             }
             for meeting_time in course_info['FormattedMeetingTimes']:
                 res['days'].append(meeting_time['Days'])
-                start = meeting_time['StartTime']
-                end = meeting_time['EndTime']
-                res['time'].append([start, end])
+                res['starttime'].append(meeting_time['StartTime'])
+                res['endtime'].append(meeting_time['EndTime'])
+                res['startdate'].append(meeting_time['StartDate'])
+                res['enddate'].append(meeting_time['EndDate'])
+                
             return res
 
         for course in info['Sections']:
@@ -39,7 +46,10 @@ def get_course_info_list() -> list:
                 'section': str(course['Number']),  # 课程班级号，形如 'W01'
                 'prof': str(course['FacultyDisplay']),  # 列表！教授名称（可能不止一个人）
                 'days': str(meeting_info['days']),  # 形如[[1,3],[2]]，课程所在的工作日顺序，1对应星期一
-                'time': str(meeting_info['time']),  # 形如[['16:00:00', '17:15:00'], ['08:30:00', '11:15:00']], 对应工作日的上课时间
+                'starttime': str(meeting_info['starttime']),  
+                'endtime': str(meeting_info['endtime']),# 形如[['16:00:00', '17:15:00'], ['08:30:00', '11:15:00']], 对应工作日的上课时间
+                'startdate': str(meeting_info['startdate']),  
+                'enddate': str(meeting_info['enddate']),  
                 'description': str(course['Course']['Description']),  # 课程描述
                 'comments': str(course['Comments']),  # 课程备注，非常重要！包含了对专业的限制
             }
