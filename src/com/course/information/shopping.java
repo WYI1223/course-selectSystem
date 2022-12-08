@@ -2,7 +2,11 @@ package com.course.information;
 //课程购物车
 
 import java.util.ArrayList;
+import java.util.Comparator;
+
 import com.user.information.Students;
+import com.course.information.Sort;
+import com.course.information.Course;
 
 public class shopping{
 
@@ -103,6 +107,48 @@ public class shopping{
         }
 
     }
-}
+    public void sortCre(){
+        courseList.sort(new Comparator<Course>() {
+            @Override
+            public int compare(Course o1, Course o2) {return o1.getCredits()-o2.getCredits();}});
+
+    }
+    public void sortSeat(){
+        courseList.sort(new Comparator<Course>() {
+            @Override
+            public int compare(Course o1, Course o2) {return o1.getAvailableSeats()-o2.getAvailableSeats();}});
+    }
+    public void sortDate(){
+        courseList.sort(new Comparator<Course>() {
+            @Override
+            public int compare(Course o1, Course o2) {return o1.getStartDate.compareTo(o2.getStartDate);}});
+
+    }
+    public void sortLevel(){
+        courseList.sort(new Comparator<Course>() {
+            @Override
+            public int compare(Course o1, Course o2) {return o1.getlevel()-o2.getlevel();}});
+    }
+
+   // public void bubbleSort(int [] arr,ArrayList<Course> list){
+//        int n = arr.length;
+//        int temp = 0;
+//        Course tempcourse = new Course("adsa","sasa");
+//        for (int i =0; i<n;i++){
+//            for (int j = 1; j<(n-i);j++){
+//                if(arr[j-1]>arr[j]){
+//                    temp = arr[j];
+//                    arr[j]=arr[j-1];
+//                    arr[j-1] = temp;
+//
+//                    tempcourse = list.get(j);
+//                    list.set(j,list.get(j-1));
+//                    list.set(j-1,tempcourse);
+//                }
+//            }
+//    }
+
+    }
+
 
 
