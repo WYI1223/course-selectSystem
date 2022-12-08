@@ -4,9 +4,10 @@ max_page_num = 24
 
 
 def get_course_info_list() -> list:
+
     course_info_list = []
     for page in range(1, max_page_num + 1):
-
+        page_course = 1
         with open(f'info/searchInfo_{page}.json', 'r') as file:
             s = file.read()
             info = json.loads(s)
@@ -55,7 +56,10 @@ def get_course_info_list() -> list:
                 'comments': str(course['Comments']),  # 课程备注，非常重要！包含了对专业的限制
             }
             print(page, formatted_course)
-            course_info_list.append(formatted_course)
+            page_course=str(course['Synonym'])
+            with open(f'info/course_info_after_{page_course}.json', 'w') as file:
+                json.dump(formatted_course, file)
+            # course_info_list.append(formatted_course)
 
     return course_info_list
 
@@ -66,5 +70,5 @@ if __name__ == '__main__':
     #     with open(f'info/searchInfo_after.json', 'w', encoding='utf-8') as file:
     #       file.write(info.content.decode(encoding='utf-8'))
     #
-    with open('course_info2.json', 'w') as file:
-        json.dump(course_info_list, file)
+    # with open('course_info2.json', 'w') as file:
+    #     json.dump(course_info_list, file)
