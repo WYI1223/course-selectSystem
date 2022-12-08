@@ -105,7 +105,11 @@ public class Students extends Member implements Serializable {
         Scanner input = new Scanner(System.in);
 
         shopping shop = new shopping();
+
         //打印当前购物车
         System.out.println(shop.toString());
+
+        //显示购物车学分
+        System.out.println(shop.getCredits());
     }
 }
