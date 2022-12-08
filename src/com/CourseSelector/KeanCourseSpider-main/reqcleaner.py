@@ -45,4 +45,15 @@ def get_course_info_list() -> list:
             }
             print(page, formatted_course)
             course_info_list.append(formatted_course)
+
     return course_info_list
+
+if __name__ == '__main__':
+    course_info_list = get_course_info_list()
+    # for page in range(0,24):
+    #     info = json.loads(course_info_list.pop())
+    #     with open(f'info/searchInfo_after.json', 'w', encoding='utf-8') as file:
+    #       file.write(info.content.decode(encoding='utf-8'))
+    #
+    with open('course_info2.json', 'w') as file:
+        json.dump(course_info_list, file)
