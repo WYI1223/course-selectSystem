@@ -71,7 +71,6 @@ public class Students extends Member implements Serializable {
         String lname = input.next();
         int Greades = input.nextInt();
         String major = input.next();
-        Students Sun = new Students(infor1,fname,lname,Greades,major);
         
         //选择功能1.浏览课程表2.浏览购物车
         System.out.println("choose function: \n1.check course list\n2.check shopping list");
