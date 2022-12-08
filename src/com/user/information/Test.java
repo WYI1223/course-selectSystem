@@ -16,16 +16,33 @@ public class Test {
         String major = input.next();
         Students Sun = new Students(infor1,fname,lname,Greades,major);
         for (;;){
+            int choice1 = input.nextInt();
+        if (choice1 == 1){
+            for (;;){
+
+
+            System.out.println("chose the function you want to do:\n1.according to level\n2.according to credits\n3.according to available seats\n4.according to date");
+
             int choice = input.nextInt();
-            System.out.println("chose the function you want to do:\n1.add course\n2.delete course\n3.show the shoppinglist\n4.quit");
             if (choice == 1 ){
 
+
+            }
+            else if (choice==2){
+                break;
+            }
+            else if (choice==3){
+                break;
             }
             else if (choice==4){
                 break;
             }
+
         }
-        System.out.println(Sun.toString());
+        }
+
+        }
+
 
     }
 }
