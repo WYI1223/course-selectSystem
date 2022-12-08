@@ -11,17 +11,17 @@ public class storeRead {
     //solo course Store to document
     public static void serialize(Course course) throws IOException{
             ObjectOutputStream objectOutputStream =
-                new ObjectOutputStream( new FileOutputStream( new File("course.txt") ) );
+                new ObjectOutputStream( new FileOutputStream( new File(course.getID()+course.getTitle()+".txt") ) );
         objectOutputStream.writeObject( course );
         objectOutputStream.close();
 
-        System.out.println("序列化成功！已经生成course.txt文件");
+        System.out.println("序列化成功！已经生成"+course.getID()+course.getTitle()+".txt"+"文件");
         System.out.println("==============================================");
     }
     //solo course Read from document
     public static void deserializeCourse(Course course) throws IOException, ClassNotFoundException {
         ObjectInputStream objectInputStream =
-                new ObjectInputStream( new FileInputStream("data\\course\\information\\111.txt") );
+                new ObjectInputStream( new FileInputStream("data\\course\\information\\"+course.getID()+""+course.getTitle()+".txt") );
         course = (Course) objectInputStream.readObject();
         objectInputStream.close();
 

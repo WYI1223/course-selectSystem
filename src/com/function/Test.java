@@ -9,9 +9,8 @@ import static com.function.storeRead.deserializeCourse;
 
 public class Test {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        Course course1 = new Course("111", "222");
+        Course course1 = new Course(111, "CPS2231");
         course1.serialize();
-        Course course2 = new Course("222","333");
-        deserializeCourse(course2);
+        deserializeCourse(course1);
     }
 }
