@@ -13,6 +13,7 @@ public class Faculty extends Member implements Serializable {
     ArrayList<Course> courses = new ArrayList<>();
     public int age;
 
+    //添加课程
     public void addCourse(Course i){
         if(Contains(i) == true){
             System.out.println("已存在此课程");
