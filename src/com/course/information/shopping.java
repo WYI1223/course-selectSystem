@@ -18,6 +18,7 @@ public class shopping{
     //2.学分是否超出
     //3.是否重复修课
     //4.课程是否可用
+
     public boolean check(){
         boolean check1 = false;
         boolean check2 = false;

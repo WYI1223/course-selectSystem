@@ -10,7 +10,7 @@ public class storeRead {
     //single-------------------------
     //solo course Store to document
     public static void serialize(Course course) throws IOException{
-        ObjectOutputStream objectOutputStream =
+            ObjectOutputStream objectOutputStream =
                 new ObjectOutputStream( new FileOutputStream( new File("course.txt") ) );
         objectOutputStream.writeObject( course );
         objectOutputStream.close();

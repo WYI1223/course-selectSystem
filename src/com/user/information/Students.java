@@ -23,6 +23,13 @@ public class Students extends Member implements Serializable {
 
     private ArrayList<Course> courseList;
     private Course[] courseSelect;
+    public Students(int id,String fname,String lname,int grades,String major){
+        this.ID = id;
+        this.firstName = fname;
+        this.lastName = lname;
+        this.grade = grades;
+        this.major = major;
+    }
 
 
     //实现学生信息print（名字，id，专业，年级，总学分）
@@ -33,13 +40,7 @@ public class Students extends Member implements Serializable {
                 ", Grade: "+grade+
                 ", Credits: "+creditsTotal;
     }
-    public Students(int id,String fname,String lname,int grades,String major){
-        this.ID = id;
-        this.firstName = fname;
-        this.lastName = lname;
-        this.grade = grades;
-        this.major = major;
-    }
+
 
     public boolean isComplete(Course course){
         if (courseList.contains(course)){
