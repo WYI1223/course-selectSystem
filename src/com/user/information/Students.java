@@ -53,6 +53,20 @@ public class Students extends Member implements Serializable {
             return false;
     }
 
+    public void addCompleteCourse(Course i){
+        if(isComplete(i) == true){
+            courseList.add(i);
+        }
+        else System.out.println("已完成此课程");
+    }
+
+    public void removeCompleteCourse(Course i){
+        if(isComplete(i) == true){
+            courseList.remove(i);
+        }
+        else System.out.println("未完成此课程");
+    }
+
 
     public int getCreditsAvailable() {
         return creditsAvailable;
