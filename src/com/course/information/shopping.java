@@ -121,7 +121,7 @@ public class shopping{
     public void sortDate(){
         courseList.sort(new Comparator<Course>() {
             @Override
-            public int compare(Course o1, Course o2) {return o1.getStartDate.compareTo(o2.getStartDate);}});
+            public int compare(Course o1, Course o2) {return o1.getStartDate().compareTo(o2.getStartDate());}});
 
     }
     public void sortLevel(){
