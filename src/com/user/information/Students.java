@@ -11,6 +11,7 @@ import com.course.information.Course;
 import java.util.Scanner;
 import java.io.Serializable;
 import java.util.ArrayList;
+import com.course.information.shopping;
 
 
 public class Students extends Member implements Serializable {
@@ -68,7 +69,6 @@ public class Students extends Member implements Serializable {
         int Greades = input.nextInt();
         String major = input.next();
         Students Sun = new Students(infor1,fname,lname,Greades,major);
-        
         System.out.println("choose function: \n1.check course list\n2.check shopping list");
         int choice = input.nextInt();
         switch(choice){
@@ -82,17 +82,18 @@ public class Students extends Member implements Serializable {
 
         System.out.println("chose the function you want to do:\n1.according to level\n2.according to credits\n3.according to available seats\n4.according to date");
 
+        shopping shop = new shopping();
         int choice = input.nextInt();
 
         switch(choice){
-            case 1:
-            case 2:
-            case 3:
-            case 4:
+            case 1:shop.sortLevel();break;
+            case 2:shop.sortCre();break;
+            case 3:shop.sortSeat();break;
+            case 4:shop.sortDate();break;
         }
     }
 
     public static void checkShoppingList(){
-
+        
     }
 }
