@@ -25,7 +25,9 @@ public class Students extends Member implements Serializable {
     private int creditsTotal;
     private int creditsAvailable;
 
+    //已修课程
     private ArrayList<Course> courseList;
+    //选择课程
     private Course[] courseSelect;
 
 
