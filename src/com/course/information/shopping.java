@@ -111,23 +111,26 @@ public class shopping{
         courseList.sort(new Comparator<Course>() {
             @Override
             public int compare(Course o1, Course o2) {return o1.getCredits()-o2.getCredits();}});
+        courseList.toString();
 
     }
     public void sortSeat(){
         courseList.sort(new Comparator<Course>() {
             @Override
             public int compare(Course o1, Course o2) {return o1.getAvailableSeats()-o2.getAvailableSeats();}});
+        courseList.toString();
     }
     public void sortDate(){
         courseList.sort(new Comparator<Course>() {
             @Override
-            public int compare(Course o1, Course o2) {return o1.getStartDate.compareTo(o2.getStartDate);}});
-
+            public int compare(Course o1, Course o2) {return o1.getStartDate().compareTo(o2.getStartDate());}});
+        courseList.toString();
     }
     public void sortLevel(){
         courseList.sort(new Comparator<Course>() {
             @Override
             public int compare(Course o1, Course o2) {return o1.getlevel()-o2.getlevel();}});
+        courseList.toString();
     }
 
    // public void bubbleSort(int [] arr,ArrayList<Course> list){

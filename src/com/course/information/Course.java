@@ -79,7 +79,7 @@ public class Course implements Comparable, Serializable {
 
     public int getlevel() {return level;}
 
-    
+
 
     public Date getStartDate() {
         return startDate;
