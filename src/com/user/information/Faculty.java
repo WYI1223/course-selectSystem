@@ -7,8 +7,6 @@ package com.user.information;
 import com.course.information.Course;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Faculty extends Member implements Serializable {
 
