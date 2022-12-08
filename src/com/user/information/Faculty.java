@@ -30,15 +30,14 @@ public class Faculty extends Member implements Serializable {
 
     //删除课程
    public void removeCourse(Course i){
-        boolean exist = new Faculty().contains(i);
+        boolean exist = new Faculty().Contains(i);
         if(exist == false)System.out.println("此课程不存在");
         else courses.remove(i);
    }
 
    //检查课程列表
-   private boolean contains(Course i){
-        List<ArrayList<Course>> CourseList = Arrays.asList(courses);
-        boolean result = CourseList.contains(i);
+   private boolean Contains(Course i){
+        boolean result = courses.contains(i);
         return result;
    }
 
