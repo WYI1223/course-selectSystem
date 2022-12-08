@@ -1,4 +1,5 @@
 package com.course.information;
+import java.util.Scanner;
 //课程购物车
 
 import java.util.ArrayList;
@@ -111,28 +112,27 @@ public class shopping{
         courseList.sort(new Comparator<Course>() {
             @Override
             public int compare(Course o1, Course o2) {return o1.getCredits()-o2.getCredits();}});
-        courseList.toString();
-
+           printCourselist(courseList);
     }
     public void sortSeat(){
         courseList.sort(new Comparator<Course>() {
             @Override
             public int compare(Course o1, Course o2) {return o1.getAvailableSeats()-o2.getAvailableSeats();}});
-        courseList.toString();
+        printCourselist(courseList);
     }
     public void sortDate(){
         courseList.sort(new Comparator<Course>() {
             @Override
             public int compare(Course o1, Course o2) {return o1.getStartDate().compareTo(o2.getStartDate());}});
 
-        courseList.toString();
+        printCourselist(courseList);
 
     }
     public void sortLevel(){
         courseList.sort(new Comparator<Course>() {
             @Override
             public int compare(Course o1, Course o2) {return o1.getlevel()-o2.getlevel();}});
-        courseList.toString();
+        printCourselist(courseList);
     }
 
    // public void bubbleSort(int [] arr,ArrayList<Course> list){
@@ -152,6 +152,38 @@ public class shopping{
 //                }
 //            }
 //    }
+
+    public void printCourselist(ArrayList<Course> courseList){
+        int i=0;
+        int j=0;
+        for (;;) {
+            System.out.println(courseList.get(i * 10 + j));
+
+            System.out.println("choose the choice you want to do:\n1.last page\n2.next page\n3.put the number () into shopping cart\n4. return to the first page");
+            Scanner input = new Scanner(System.in);
+            int choice = input.nextInt();
+            if (choice==1&&i>0){
+                i--;
+            }
+            else if (choice==2){
+                i++;
+            }
+            else if (choice==3){
+                System.out.println("choose the number of the course you want to register");
+                int number = input.nextInt();
+                if (number>=0&&number<=9){
+                    courseList.get(i*10+j).register();
+                }
+                else {
+                    System.out.println("wrong number try agiain");
+                }
+
+            }
+            else {
+                break;
+            }
+        }
+    }
 
     }
 
