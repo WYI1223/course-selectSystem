@@ -91,6 +91,11 @@ public class shopping{
         return credits;
     }
 
+    //返回列表第i位课程
+    public Course getCourseInfo(int i){
+        return courseList.get(i);
+    }
+
     //查看当前购物车学分
     public int getCredits() {
         return credits;
