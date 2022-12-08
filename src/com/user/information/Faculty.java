@@ -14,7 +14,10 @@ public class Faculty extends Member implements Serializable {
     public int age;
 
     public void addCourse(Course i){
-        courses.add(i);
+        if(Contains(i) == true){
+            System.out.println("已存在此课程");
+        }
+        else courses.add(i);
     }
 
     //显示教师所属课程的学生列表
@@ -28,8 +31,7 @@ public class Faculty extends Member implements Serializable {
 
     //删除课程
    public void removeCourse(Course i){
-        boolean exist = new Faculty().Contains(i);
-        if(exist == false)System.out.println("此课程不存在");
+        if(Contains(i) == false)System.out.println("此课程不存在");
         else courses.remove(i);
    }
 
