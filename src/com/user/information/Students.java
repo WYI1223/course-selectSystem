@@ -74,8 +74,8 @@ public class Students extends Member implements Serializable {
         System.out.println("choose function: \n1.check course list\n2.check shopping list");
         int choice = input.nextInt();
         switch(choice){
-            case 1:checkCourseList();break;
-            case 2:checkShoppingList();break;
+            case 1->checkCourseList();
+            case 2->checkShoppingList();
         }
     }
 
@@ -90,10 +90,10 @@ public class Students extends Member implements Serializable {
         int choice = input.nextInt();
 
         switch(choice){
-            case 1:shop.sortLevel();break;
-            case 2:shop.sortCre();break;
-            case 3:shop.sortSeat();break;
-            case 4:shop.sortDate();break;
+            case 1->shop.sortLevel();
+            case 2->shop.sortCre();
+            case 3->shop.sortSeat();
+            case 4->shop.sortDate();
         }
     }
 
