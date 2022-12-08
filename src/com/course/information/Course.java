@@ -36,6 +36,7 @@ import java.util.Date;
 
 
 public class Course implements Comparable, Serializable {
+
     private String code,title,room;
     private String AcademicLevel="Undergraduate";
     private int ID,credits,capacity,availableSeats;
@@ -48,6 +49,7 @@ public class Course implements Comparable, Serializable {
     private String Grading;
     private int Capacity,Available;
     private Faculty instructor;
+    private int level;
     private Students students;
     private ArrayList StudentsList; //储存学生
 
@@ -66,6 +68,7 @@ public class Course implements Comparable, Serializable {
     }
 
 
+
     public String getTitle() {
         return title;
     }
@@ -78,6 +81,22 @@ public class Course implements Comparable, Serializable {
         return credits;
     }
 
+    public int getlevel() {return level;}
+
+
+
+    public Date getStartDate() {
+        return startDate;
+    }
+    public Date getEndDate() {
+        return endDate;
+    }
+    public Date getStartTime() {
+        return startTime;
+    }
+    public Date getEndTime() {
+        return endTime;
+    }
 
     //comparable 接口实现
     @Override
