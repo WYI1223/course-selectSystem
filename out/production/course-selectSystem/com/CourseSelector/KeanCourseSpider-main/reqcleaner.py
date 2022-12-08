@@ -66,5 +66,5 @@ if __name__ == '__main__':
     #     with open(f'info/searchInfo_after.json', 'w', encoding='utf-8') as file:
     #       file.write(info.content.decode(encoding='utf-8'))
     #
-    with open('course_info2.json', 'w') as file:
-        json.dump(course_info_list, file)
+    # with open('course_info2.json', 'w') as file:
+    #     json.dump(course_info_list, file)

@@ -24,6 +24,17 @@ public class CourseTest {
         int Capacity = 18;
         Date StartTime = new Date(new BigInteger("1669815000000").longValue());
         Date EndTime = new Date(new BigInteger("1669817700000").longValue());
+        System.out.println(new Date(new BigInteger("1676264400000").longValue()));//start date
+        System.out.println(new Date(new BigInteger("1685419200000").longValue()));//date
+        System.out.println(new Date(new BigInteger("1669815000000").longValue()));//start time
+        System.out.println(new Date(new BigInteger("1669817700000").longValue()));//end
+        System.out.println("08:30:00");
+        System.out.println(
+        "08:30:00".substring(0,2)+""+"08:30:00".substring(3,5));
+        System.out.println("09:45:00".hashCode());
+
+
+
 
 
 //        {"Term":{"Code":"23/SPWZ","Description":"Spring 2023 Wenzhou","StartDate":"\/Date(1676178000000)\/","EndDate":"\/Date(1685419200000)\/",
@@ -64,7 +75,8 @@ public class CourseTest {
 //# "SectionTitleDisplay":"COMPUTER PROGRAMMING","StartDateDisplay":"2/13/2023","EndDateDisplay":"5/30/2023","LocationDisplay":"WENZHOU-KEAN UNIVERSITY",
 //# "LocationCode":"W","HasUnlimitedSeats":false,"SpecialIconPath":"/Content/Images/","AdditionalFeesApply":false,"HasCustomSpecialIcon":false,"AllowAudit":true,
 //# "AllowPassNoPass":false,"Available":18,"Books":[],"Capacity":18,"Ceus":null,"CourseId":"6234","EndDate":"\/Date(1685419200000)\/","Id":"256396","IsActive":true,
-//# "Location":"W","MaximumCredits":null,"AvailabilityStatus":0,"Meetings":[{"InstructionalMethodCode":"LEC","StartTime":"\/Date(1669815000000)\/",
+//# "Location":"W","MaximumCredits":null,"AvailabilityStatus":0,
+// "Meetings":[{"InstructionalMethodCode":"LEC","StartTime":"\/Date(1669815000000)\/",
 //# "EndTime":"\/Date(1669817700000)\/","Days":[2,4],"Room":"*","StartDate":"\/Date(1676264400000)\/","EndDate":"\/Date(1685419200000)\/","Frequency":"W",
 //# "IsOnline":false},{"InstructionalMethodCode":"LEC","StartTime":"\/Date(1669817700000)\/","EndTime":"\/Date(1669821300000)\/","Days":[2,4],"Room":"*",
 //# "StartDate":"\/Date(1676264400000)\/","EndDate":"\/Date(1685419200000)\/","Frequency":"W","IsOnline":false}],"PrimarySectionMeetings":[],
