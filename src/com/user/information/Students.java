@@ -94,6 +94,7 @@ public class Students extends Member implements Serializable {
     }
 
     public static void checkShoppingList(){
-        
+        shopping shop = new shopping();
+        shop.toString();
     }
 }
