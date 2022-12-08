@@ -17,7 +17,7 @@ public class CourseTest {
                 "using a high-level, object-oriented programming language.";
         int Requisites = 21207;
         String AcademicLevel = "Undergraduate";
-        Date EndDate = new Date(new BigDecimal("1685419200000").toString());
+        Date EndDate = new Date(new BigDecimal("1685419200000").longValue());
         Date StartDate = new Date(new BigInteger("1676264400000").longValue());
         int[] Days = {2,4};
         int Available = 18;
