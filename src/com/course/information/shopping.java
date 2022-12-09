@@ -175,12 +175,16 @@ public class shopping {
 //                }
 //            }
 //    }
+    //实现分页展示购物表，和特定选项提供特定功能的方法（一页展示十个课程）
+    //1.上一页
+    //2.下一页
+    //3.将user输入的序号所指课程加入购物车
+    //4.返回操作的首页
     public void printcourselist(ArrayList<Course> courseL) {
         int i = 0;
-
-        for (; ; ) {
+        for (;;) {
             for (int j = 0;j<10;j++){
-            System.out.println(courseL.get(i * 10 + j));
+            System.out.println(j+"."+courseL.get(i * 10 + j));
             }
             Scanner input = new Scanner(System.in);
             System.out.println("1.last page 2.next page 3.choose the () number course to register 4.quit");
@@ -201,6 +205,7 @@ public class shopping {
         }
 
     }
+
 
 }
 
