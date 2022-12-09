@@ -177,9 +177,11 @@ public class shopping {
 //    }
     public void printcourselist(ArrayList<Course> courseL) {
         int i = 0;
-        int j = 0;
+
         for (; ; ) {
+            for (int j = 0;j<10;j++){
             System.out.println(courseL.get(i * 10 + j));
+            }
             Scanner input = new Scanner(System.in);
             System.out.println("1.last page 2.next page 3.choose the () number course to register 4.quit");
             int choice = input.nextInt();
@@ -190,7 +192,7 @@ public class shopping {
             } else if (choice == 3) {
                 int number = input.nextInt();
                 courseL.get(i*10+number).register();
-            } else if (i*10+j==courseL.size()) {
+            } else if (i*10+9>=courseL.size()) {
                 break;
             } else {
                 break;
