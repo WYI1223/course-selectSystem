@@ -131,7 +131,7 @@ public class Course implements Comparable, Serializable {
     public String getInformation(){
         return "Course Section: "+this.subjectCode+"_"+this.Number+"_"+this.Section+'\''+
                 ",title: "+this.title+ ", credits: "+this.credits+ ", instructor: "+ Arrays.toString(prof)+
-                ",Time: "+this.startTime+"-"+this.endTime+"Days: "+ Arrays.toString(Days)+
+                ",Time: "+this.startTime+"-"+this.endTime+" Days: "+ Arrays.toString(Days)+
                 ", period: "+this.startDate+" - "+this.endDate;
     }
 
