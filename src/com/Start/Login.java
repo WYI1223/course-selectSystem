@@ -60,10 +60,10 @@ public class Login {
 
             ArrayList courses = new ArrayList<>(students.getShoppingCartNumber());
             for (;;){
-                File coursefile = new File("data\\course\\information\\"+courses.remove(0)+".txt");
-                shoppingcart.addCourse(deserializeCourse(coursefile));
                 if(courses.isEmpty())
                     break;
+                File coursefile = new File("data\\course\\information\\"+courses.remove(0)+".txt");
+                shoppingcart.addCourse(deserializeCourse(coursefile));
             }
 
 

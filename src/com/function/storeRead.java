@@ -27,7 +27,7 @@ public class storeRead {
         Course course = (Course) objectInputStream.readObject();
         objectInputStream.close();
 
-        System.out.println("反序列化成功");
+//        System.out.println("反序列化成功");
         return course;
 //        System.out.println(course);
     }

@@ -66,8 +66,8 @@ public class Students extends Member implements Serializable {
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(this);
         oos.close();
-        System.out.println("序列化成功！已经生成"+getID()+".txt"+"文件");
-        System.out.println("==============================================");
+//        System.out.println("序列化成功！已经生成"+getID()+".txt"+"文件");
+//        System.out.println("==============================================");
     }
 
     public boolean isComplete(Course course){
@@ -100,7 +100,9 @@ public class Students extends Member implements Serializable {
     }
     public void delShoppingCartNumberSection(int number) throws IOException {
         Integer section = number;
-        shoppingCartNumber.remove(section);
+        shoppingCartNumber.remove(number);
+//        System.out.println(shoppingCartNumber);
+//        System.out.println(section);
         serialize();
     }
 

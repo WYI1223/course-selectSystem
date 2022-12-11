@@ -90,10 +90,11 @@ public class Course implements Comparable, Serializable {
 
     public int getlevel() {return Number;}
 
-    public void addAvailableseats(){
+    public void addAvailableseats() throws IOException {
         availableSeats++;
+        serialize();
     }
-    
+
 
 
     public Date getStartDate() {
@@ -128,15 +129,15 @@ public class Course implements Comparable, Serializable {
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(this);
         oos.close();
-        System.out.println("序列化成功！已经生成"+getID()+".txt"+"文件");
-        System.out.println("==============================================");
+//        System.out.println("序列化成功！已经生成"+getID()+".txt"+"文件");
+//        System.out.println("==============================================");
     }
 
     public String getInformation(){
         return "Course Section: "+this.subjectCode+"_"+this.Number+"_"+this.Section+'\''+
                 ",title: "+this.title+ ", credits: "+this.credits+ ", instructor: "+ Arrays.toString(prof)+
                 ",Time: "+this.startTime+"-"+this.endTime+" Days: "+ Arrays.toString(Days)+
-                ", period: "+this.startDate+" - "+this.endDate;
+                ", period: "+this.startDate+" - "+this.endDate+" "+this.getAvailableSeats();
     }
 
     @Override
@@ -181,7 +182,7 @@ public class Course implements Comparable, Serializable {
     }
 
     //注册课程，并对使用者进行反馈
-    public void register(){
+    public void register() throws IOException {
         if(availableSeats==0) {
             isAvailable = false;
             System.out.println("The course is full");
@@ -189,6 +190,7 @@ public class Course implements Comparable, Serializable {
         else {
             availableSeats = availableSeats - 1;
 //            StudentsList.add(students);
+            serialize();
         }
     }
 

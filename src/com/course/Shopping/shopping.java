@@ -141,8 +141,9 @@ public class shopping implements Serializable {
             Scanner input = new Scanner(System.in);
             int choice = input.nextInt();
 
-            if (0<=choice&&choice<=courseList.size()) {
+            if (0<=choice&&choice<=courseList.size()-1) {
                 System.out.println("choose the number to remove");
+                courseList.get(choice).addAvailableseats();
                 courseList.remove(choice);
                 this.students.delShoppingCartNumberSection(choice);
                 if (this.credits>=3){
@@ -154,7 +155,7 @@ public class shopping implements Serializable {
 
 
             }
-            else {
+            else if (choice>courseList.size()){
                 break;
             }
         }
@@ -164,10 +165,7 @@ public class shopping implements Serializable {
 
 
 
-    public void remove(int choice){
-        courseList.remove(choice);
-        courseList.get(choice).addAvailableseats();
-    }
+
 
 
 
