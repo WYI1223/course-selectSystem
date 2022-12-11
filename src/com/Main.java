@@ -32,7 +32,7 @@ public class Main {
             System.out.println("choose function: \n1.check course list\n2.check shopping list");
             int choice = input.nextInt();
             switch(choice){
-                case 1->checkCourseList(courseList);
+                case 1->checkCourseList(courseList,students.getShoppingCart());
                 case 2->checkShoppingList(students.getShoppingCart(),courseList);
             }
         }

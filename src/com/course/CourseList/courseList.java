@@ -1,5 +1,6 @@
 package com.course.CourseList;
 
+import com.course.Shopping.shopping;
 import com.course.information.Course;
 
 import java.io.File;
@@ -27,52 +28,63 @@ public class courseList {
         return courseList;
     }
 
-    public static void sortCre(ArrayList<Course> courseList) {
+    public static void sortCre(ArrayList<Course> courseList,shopping shoppingcart) {
         courseList.sort(new Comparator<Course>() {
             @Override
             public int compare(Course o1, Course o2) {
                 return o1.getCredits() - o2.getCredits();
             }
         });
-        printcourselist(courseList);
+        printcourselist(courseList,shoppingcart);
 
     }
 
-    public static void sortSeat(ArrayList<Course> courseList) {
+    public static void sortSeat(ArrayList<Course> courseList,shopping shoppingcart) {
         courseList.sort(new Comparator<Course>() {
             @Override
             public int compare(Course o1, Course o2) {
                 return o1.getAvailableSeats() - o2.getAvailableSeats();
             }
         });
-        printcourselist(courseList);
+        printcourselist(courseList,shoppingcart);
     }
 
-    public static void sortDate(ArrayList<Course> courseList) {
+    public static void sortDate(ArrayList<Course> courseList,shopping shoppingcart) {
         courseList.sort(new Comparator<Course>() {
             @Override
             public int compare(Course o1, Course o2) {
-                return o1.getStartDate().compareTo(o2.getStartDate());
+                return o1.getStartTime().compareTo(o2.getStartTime());
             }
         });
 
-        printcourselist(courseList);
+        printcourselist(courseList,shoppingcart);
 
     }
 
-    public static void sortLevel(ArrayList<Course> courseList) {
+    public static void sortLevel(ArrayList<Course> courseList,shopping shoppingcart) {
         courseList.sort(new Comparator<Course>() {
             @Override
             public int compare(Course o1, Course o2) {
                 return o1.getlevel() - o2.getlevel();
             }
         });
-        printcourselist(courseList);
+        printcourselist(courseList,shoppingcart);
     }
-    public static void printcourselist(ArrayList<Course> courseL) {
+    public static void printcourselist(ArrayList<Course> courseL,shopping shoppingcart) {
         int i = 0;
         for (;;) {
             if (i*10+9>=courseL.size()) {
+                Scanner input = new Scanner(System.in);
+                for (int j = 0;j<courseL.size()-i*10;j++){
+                    System.out.println(j+"."+courseL.get(i * 10 + j));
+                }
+                System.out.println("Enter 3 chose the () number course/Or quit");
+                int choice = input.nextInt();
+                if (choice == 3) {
+                    int number = input.nextInt();
+                    courseL.get(i*10+number).register();
+                    shoppingcart.addCourse(courseL.get(i*10+number));
+                }
                 break;
             }
             for (int j = 0;j<10;j++){
@@ -91,6 +103,7 @@ public class courseList {
             else if (choice == 3) {
                 int number = input.nextInt();
                 courseL.get(i*10+number).register();
+                shoppingcart.addCourse(courseL.get(i*10+number));
             }
             else {
                 break;

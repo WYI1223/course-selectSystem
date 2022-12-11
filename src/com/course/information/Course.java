@@ -185,7 +185,7 @@ public class Course implements Comparable, Serializable {
         }
         else {
             availableSeats = availableSeats - 1;
-            StudentsList.add(students);
+//            StudentsList.add(students);
         }
     }
 

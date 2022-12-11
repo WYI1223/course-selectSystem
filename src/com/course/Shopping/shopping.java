@@ -15,10 +15,10 @@ public class shopping implements Serializable {
     private int credits = 0;
     private String term;
     private String course;
-    private ArrayList<String> codeList;
+    private ArrayList<String> codeList = new ArrayList<>();
     private Students students;
 
-    private ArrayList<Course> courseList;
+    private ArrayList<Course> courseList = new ArrayList<Course>();
 
     //判断课程是否冲突
     //1.前置课是否修完
@@ -51,9 +51,9 @@ public class shopping implements Serializable {
 
     //判断是否存在相同课程
     public boolean haveSameCourse(Course course) {
-        if (courseList.contains(course))
-            return true;
-        return false;
+        if (courseList==null)
+            return false;
+        return courseList.contains(course);
     }
 
 
@@ -116,12 +116,6 @@ public class shopping implements Serializable {
 
 
     //实现在不考虑冲突的情况下，注册所有购物车内课程
-    public void register() {
-        for (int i = 0; i <= courseList.size(); i++) {
-            courseList.get(i).register();
-        }
-
-    }
 
 
 

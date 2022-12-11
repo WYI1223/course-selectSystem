@@ -39,12 +39,12 @@ public class Function {
                 }
                 break;
 
-            case 2:checkCourseList(courseList);break;
+            case 2:checkCourseList(courseList,shoppingCart);break;
             case 3:break;
         }
         return;
     }
-    public static void checkCourseList(ArrayList<Course> courseList) throws IOException, ClassNotFoundException {
+    public static void checkCourseList(ArrayList<Course> courseList,shopping shoppingcart) throws IOException, ClassNotFoundException {
         Scanner input = new Scanner(System.in);
 
         //新建shopping对象(此对象涵盖全课表)
@@ -54,10 +54,10 @@ public class Function {
         int choice = input.nextInt();
 
         switch(choice){
-            case 1->sortLevel(courseList);
-            case 2->sortCre(courseList);
-            case 3->sortSeat(courseList);
-            case 4->sortDate(courseList);
+            case 1->sortLevel(courseList,shoppingcart);
+            case 2->sortCre(courseList,shoppingcart);
+            case 3->sortSeat(courseList,shoppingcart);
+            case 4->sortDate(courseList,shoppingcart);
         }
     }
 }
