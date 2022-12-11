@@ -86,8 +86,8 @@ public class courseList {
                 }
                 System.out.println("----------------");
 
-                //give choice to do function
-                System.out.println("Enter 3 chose the () number course/Or quit");
+                //give choice to do function(at the last page)
+                System.out.println("Enter 3 chose the () number course Or choose other number to quit");
                 int choice = input.nextInt();
                 if (choice == 3) {
                     System.out.println("choose the number () to register");
@@ -95,12 +95,15 @@ public class courseList {
                     if (shoppingcart.getCredits()<16){
                     courseL.get(i*10+number).register();
                     shoppingcart.addCourse(courseL.get(i*10+number));
-                    System.out.println("register successfully!");}
+                    continue;
+                    }
                     else {
                         System.out.println("your credits are overflow!");
                     }
                 }
-                break;
+                else if (choice!=3){
+                    break;
+                }
             }
             //show course
             System.out.println("----------------");
@@ -117,6 +120,10 @@ public class courseList {
             if (choice == 1&&i!=0) {
                 i--;
             }
+            else if (choice ==1&&i==0){
+                System.out.println("there is the first page back to the 'choose function'");
+                System.out.println();
+            }
             else if (choice == 2) {
                 i++;
             }
@@ -126,7 +133,7 @@ public class courseList {
                 if (shoppingcart.getCredits()<16){
                     courseL.get(i*10+number).register();
                     shoppingcart.addCourse(courseL.get(i*10+number));
-                    System.out.println("register successfully!");}
+                   }
                 else {
                     System.out.println("your credits are overflow!");
                 }
