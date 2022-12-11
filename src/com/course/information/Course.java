@@ -44,7 +44,7 @@ public class Course implements Comparable, Serializable {
     private Date startDate,endDate;
     private int[] Days;
 //         meeting时间
-    private Date startTime,endTime;
+    private String startTime,endTime;
     private int[] requisites;
     private String Grading;
     private int Capacity,Available;
