@@ -32,7 +32,7 @@ public class Students extends Member implements Serializable {
     //该学生的购物车
     transient private shopping shoppingCart;
     File file = new File("data\\Member\\Students\\"+id);
-    private ArrayList<Integer> shoppingCartNumber;
+    private ArrayList<Integer> shoppingCartNumber = new ArrayList<>();
 
     //已修课程
     private ArrayList<Course> coursefinished;
@@ -92,27 +92,35 @@ public class Students extends Member implements Serializable {
         else System.out.println("取消完成此课程");
     }
 
-    public void addShoppingCartNumberSection(int number){
-        shoppingCartNumber.add(number);
+    public void addShoppingCartNumberSection(int number) throws IOException {
+        if (!shoppingCartNumber.contains((Integer) number)) {
+            shoppingCartNumber.add(number);
+            serialize();
+        }
     }
-    public void delShoppingCartNumberSection(int number){
-        shoppingCartNumber.remove(number);
+    public void delShoppingCartNumberSection(int number) throws IOException {
+        Integer section = number;
+        shoppingCartNumber.remove(section);
+        serialize();
     }
 
+    public ArrayList<Integer> getShoppingCartNumber() {
+        return shoppingCartNumber;
+    }
 
     public int getCreditsAvailable() {
         return creditsAvailable;
     }
 
     //将序号（）加入课程购物车
-    public void addShoppingCourse(Course i){
-        shoppingCart.addCourse(i);
-    }
+//    public void addShoppingCourse(Course i){
+//        shoppingCart.addCourse(i);
+//    }
 
     //购物车删除序号（）课程
-    public void delShoppingCourse(Course i){
-        shoppingCart.delCourse(i);
-    }
+//    public void delShoppingCourse(Course i){
+//        shoppingCart.delCourse(i);
+//    }
 
 
     public shopping getShoppingCart() {

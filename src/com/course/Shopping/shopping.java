@@ -27,6 +27,9 @@ public class shopping implements Serializable {
     //4.课程是否可用
 
 
+    public shopping(Students students) {
+        this.students = students;
+    }
 
     public boolean check() {
         boolean check1 = false;
@@ -70,9 +73,10 @@ public class shopping implements Serializable {
     }
 
     //添加新课程
-    public void addCourse(Course course) {
+    public void addCourse(Course course) throws IOException {
         if (!haveSameCourse(course) && credits <= 19) {
             courseList.add(course);
+            students.addShoppingCartNumberSection(course.getID());
             credits += course.getCredits();
             System.out.println("register successfully!");
         }
@@ -90,9 +94,10 @@ public class shopping implements Serializable {
 
 
     //删除课程
-    public void delCourse(Course course) {
+    public void delCourse(Course course) throws IOException {
         if (haveSameCourse(course)) {
             courseList.remove(course);
+            students.delShoppingCartNumberSection(course.getID());
             credits -= course.getCredits();
         } else {
             System.out.println(course.getTitle() + " is not exist in shopping cart.");
@@ -120,7 +125,7 @@ public class shopping implements Serializable {
     }
 
 
-    public void showCourse() {
+    public void showCourse() throws IOException {
         System.out.println("--------------------");
         for (;;) {
             if (this.credits==0){
@@ -139,6 +144,7 @@ public class shopping implements Serializable {
             if (0<=choice&&choice<=courseList.size()) {
                 System.out.println("choose the number to remove");
                 courseList.remove(choice);
+                this.students.delShoppingCartNumberSection(choice);
                 if (this.credits>=3){
                     credits=credits-3;
                     System.out.println("remove successfully");

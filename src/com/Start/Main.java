@@ -17,13 +17,14 @@ public class Main {
         //2.删除课程
         //打印课程表
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter you acount(Idnumber + firstname + lastname + grades + major):");
-        int infor1 = input.nextInt();
-        String fname = input.next();
-        String lname = input.next();
-        int Greades = input.nextInt();
-        String major = input.next();
-        Students students = new Students(infor1,fname,lname,Greades,major);
+//        System.out.println("Enter you acount(Idnumber + firstname + lastname + grades + major):");
+//        int infor1 = input.nextInt();
+//        String fname = input.next();
+//        String lname = input.next();
+//        int Greades = input.nextInt();
+//        String major = input.next();
+//        Students students = new Students(infor1,fname,lname,Greades,major);
+        Students students1 = new Students();
         ArrayList<Course> courseList = new ArrayList<>();
 
         for(;;){
@@ -31,8 +32,8 @@ public class Main {
             System.out.println("choose function: \n1.check course list\n2.check shopping list");
             int choice = input.nextInt();
             switch(choice){
-                case 1->checkCourseList(courseList,students.getShoppingCart());
-                case 2->checkShoppingList(students.getShoppingCart());
+                case 1->checkCourseList(courseList,students1.getShoppingCart());
+                case 2->checkShoppingList(students1.getShoppingCart());
             }
         }
     }

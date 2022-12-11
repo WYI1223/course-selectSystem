@@ -31,7 +31,7 @@ public class courseList {
         return courseList;
     }
 
-    public static void sortCre(ArrayList<Course> courseList,shopping shoppingcart) {
+    public static void sortCre(ArrayList<Course> courseList,shopping shoppingcart) throws IOException {
         courseList.sort(new Comparator<Course>() {
             @Override
             public int compare(Course o1, Course o2) {
@@ -42,7 +42,7 @@ public class courseList {
 
     }
 
-    public static void sortSeat(ArrayList<Course> courseList,shopping shoppingcart) {
+    public static void sortSeat(ArrayList<Course> courseList,shopping shoppingcart) throws IOException {
         courseList.sort(new Comparator<Course>() {
             @Override
             public int compare(Course o1, Course o2) {
@@ -52,7 +52,7 @@ public class courseList {
         printcourselist(courseList,shoppingcart);
     }
 
-    public static void sortDate(ArrayList<Course> courseList,shopping shoppingcart) {
+    public static void sortDate(ArrayList<Course> courseList,shopping shoppingcart) throws IOException {
         courseList.sort(new Comparator<Course>() {
             @Override
             public int compare(Course o1, Course o2) {
@@ -64,7 +64,7 @@ public class courseList {
 
     }
 
-    public static void sortLevel(ArrayList<Course> courseList,shopping shoppingcart) {
+    public static void sortLevel(ArrayList<Course> courseList,shopping shoppingcart) throws IOException {
         courseList.sort(new Comparator<Course>() {
             @Override
             public int compare(Course o1, Course o2) {
@@ -73,7 +73,7 @@ public class courseList {
         });
         printcourselist(courseList,shoppingcart);
     }
-    public static void printcourselist(ArrayList<Course> courseL,shopping shoppingcart) {
+    public static void printcourselist(ArrayList<Course> courseL,shopping shoppingcart) throws IOException {
         int i = 0;
         for (;;) {
 
