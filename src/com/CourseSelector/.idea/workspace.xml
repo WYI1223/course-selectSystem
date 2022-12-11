@@ -2,9 +2,147 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ddd06a6-0381-4bfc-a17a-d738d4ff3619" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../course/information/CourseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../course/json2data/CourseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/CourseSelector/KeanCourseSpider-main/req.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/CourseSelector/KeanCourseSpider-main/req.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/CourseSelector/KeanCourseSpider-main/reqcleaner.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/CourseSelector/KeanCourseSpider-main/reqcleaner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/UI/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/UI/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/information/Course.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/information/Course.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/information/CourseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/information/CourseTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/information/shopping.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/information/shopping.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26445.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26446.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26447.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26448.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26449.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26450.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26451.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26452.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26453.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26454.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26455.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26456.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26458.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26459.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26460.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26461.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26462.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26464.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26466.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26468.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26469.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26471.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26474.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26477.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26481.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26482.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26483.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26485.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26486.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26488.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26490.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26492.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26493.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26495.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26498.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26499.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26501.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26502.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26504.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26512.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26517.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26518.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26520.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26522.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26523.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26525.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26526.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26527.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26528.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26529.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26530.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26531.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26532.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26533.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26534.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26536.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26540.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26541.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26542.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26543.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26544.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26545.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/course_info_after_26546.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/json2course$Course.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/json2course.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/course/json2data/json2course.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/user/information/Students.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../out/production/course-selectSystem/com/user/information/Students.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KeanCourseSpider-main/req.py" beforeDir="false" afterPath="$PROJECT_DIR$/KeanCourseSpider-main/req.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeanCourseSpider-main/reqcleaner.py" beforeDir="false" afterPath="$PROJECT_DIR$/KeanCourseSpider-main/reqcleaner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/information/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/../course/information/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26445.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26446.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26447.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26448.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26449.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26450.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26451.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26452.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26453.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26454.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26455.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26456.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26458.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26459.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26460.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26461.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26462.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26464.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26466.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26468.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26469.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26471.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26474.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26477.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26481.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26482.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26483.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26485.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26486.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26488.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26490.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26492.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26493.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26495.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26498.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26499.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26501.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26502.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26504.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26512.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26517.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26518.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26520.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26522.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26523.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26525.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26526.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26527.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26528.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26529.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26530.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26531.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26532.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26533.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26534.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26536.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26540.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26541.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26542.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26543.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26544.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26545.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/course_info_after_26546.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course/json2data/json2course.java" beforeDir="false" afterPath="$PROJECT_DIR$/../course/json2data/json2course.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +182,35 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="reqcleaner" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CourseSelector" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/KeanCourseSpider-main" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/KeanCourseSpider-main/reqcleaner.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.reqcleaner" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -73,7 +240,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CourseSelector$reqcleaner.coverage" NAME="reqcleaner Coverage Results" MODIFIED="1669712766064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/KeanCourseSpider-main" />
+    <SUITE FILE_PATH="coverage/CourseSelector$reqcleaner.coverage" NAME="reqcleaner Coverage Results" MODIFIED="1670751930029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/KeanCourseSpider-main" />
     <SUITE FILE_PATH="coverage/CourseSelector$req.coverage" NAME="req Coverage Results" MODIFIED="1669712383588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/KeanCourseSpider-main" />
   </component>
 </project>

@@ -91,10 +91,10 @@ public class Course implements Comparable, Serializable {
     public Date getEndDate() {
         return endDate;
     }
-    public Date getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
-    public Date getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
