@@ -1,39 +1,57 @@
 package com.course.information;
 
+import java.io.File;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
 
+import static com.function.storeRead.deserializeCourse;
+
 public class CourseTest {
-    public static void main(String[] args) {
-        int ID = 6234;
-        String term = "23/SPWZ";
-        String SubjectCode = "CPS";
-        int Number = 2231;
-        int credit = 4;
-        String Title = "COMPUTER PROGRAMMING";
-        String Description = "Fundamental computing and programming concerts; " +
-                "use of systems software; problem solving; design of algorithms " +
-                "using a high-level, object-oriented programming language.";
-        int Requisites = 21207;
-        String AcademicLevel = "Undergraduate";
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+//        int ID = 6234;
+//        String term = "23/SPWZ";
+//        String SubjectCode = "CPS";
+//        int Number = 2231;
+//        int credit = 4;
+//        String Title = "COMPUTER PROGRAMMING";
+//        String Description = "Fundamental computing and programming concerts; " +
+//                "use of systems software; problem solving; design of algorithms " +
+//                "using a high-level, object-oriented programming language.";
+//        int Requisites = 21207;
+//        String AcademicLevel = "Undergraduate";
+//
+//        Date EndDate = new Date(new BigDecimal("1685419200000").longValue());
+//        Date StartDate = new Date(new BigInteger("1676264400000").longValue());
+//        int[] Days = {2,4};
+//        int Available = 18;
+//        int Capacity = 18;
+//        Date StartTime = new Date(new BigInteger("1669815000000").longValue());
+//        Date EndTime = new Date(new BigInteger("1669817700000").longValue());
+//
+//        System.out.println(new Date(new BigInteger("1676264400000").longValue()));//start date
+//        System.out.println(new Date(new BigInteger("1685419200000").longValue()));//date
+//        System.out.println(new Date(new BigInteger("1669815000000").longValue()));//start time
+//        System.out.println(new Date(new BigInteger("1669817700000").longValue()));//end
+//        System.out.println("08:30:00");
+//        System.out.println(
+//        "08:30:00".substring(0,2)+""+"08:30:00".substring(3,5));
+//        System.out.println("09:45:00".hashCode());
 
-        Date EndDate = new Date(new BigDecimal("1685419200000").longValue());
-        Date StartDate = new Date(new BigInteger("1676264400000").longValue());
-        int[] Days = {2,4};
-        int Available = 18;
-        int Capacity = 18;
-        Date StartTime = new Date(new BigInteger("1669815000000").longValue());
-        Date EndTime = new Date(new BigInteger("1669817700000").longValue());
+        int number = 26445;
+        int count = 0;
+        for (;;){
+            if (number==26547)
+                break;
+            File file = new File("Data\\Course\\information\\"+number+++".txt");
+            if(!file.isFile())
+                continue;
+            Course course = deserializeCourse(file);
+            System.out.println(course.toString());
 
-        System.out.println(new Date(new BigInteger("1676264400000").longValue()));//start date
-        System.out.println(new Date(new BigInteger("1685419200000").longValue()));//date
-        System.out.println(new Date(new BigInteger("1669815000000").longValue()));//start time
-        System.out.println(new Date(new BigInteger("1669817700000").longValue()));//end
-        System.out.println("08:30:00");
-        System.out.println(
-        "08:30:00".substring(0,2)+""+"08:30:00".substring(3,5));
-        System.out.println("09:45:00".hashCode());
+
+        }
 
 
 

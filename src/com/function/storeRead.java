@@ -1,7 +1,7 @@
 package com.function;
 
 import com.course.information.Course;
-import com.course.information.shopping;
+import com.course.Shopping.shopping;
 import com.user.information.Member;
 import com.user.information.Students;
 
@@ -21,14 +21,15 @@ public class storeRead {
         System.out.println("==============================================");
     }
     //solo course Read from document
-    public static void deserializeCourse(Course course) throws IOException, ClassNotFoundException {
+    public static Course deserializeCourse(File path) throws IOException, ClassNotFoundException {
         ObjectInputStream objectInputStream =
-                new ObjectInputStream( new FileInputStream("data\\course\\information\\"+course.getID()+""+course.getTitle()+".txt") );
-        course = (Course) objectInputStream.readObject();
+                new ObjectInputStream( new FileInputStream(path));
+        Course course = (Course) objectInputStream.readObject();
         objectInputStream.close();
 
-        System.out.println("反序列化结果为：");
-        System.out.println(course);
+        System.out.println("反序列化成功");
+        return course;
+//        System.out.println(course);
     }
     //single Faculty store and read
     public static void serialize(Member member) throws IOException{
