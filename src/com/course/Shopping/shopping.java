@@ -1,4 +1,4 @@
-package com.course.information;
+package com.course.Shopping;
 //课程购物车
 
 import java.io.*;
@@ -31,9 +31,9 @@ public class shopping implements Serializable {
         boolean check2 = false;
 
         for (int i = 0; i < courseList.size(); i++) {
-            if (students.isComplete(courseList.get(i).getPreCourse())) {
-                check1 = true;
-            }
+//            if (students.isComplete(courseList.get(i).getPreCourse())) {
+//                check1 = true;
+//            }
         }
 
         if (this.credits > students.getCreditsAvailable()) {

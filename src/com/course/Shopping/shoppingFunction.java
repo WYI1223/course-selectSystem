@@ -1,4 +1,4 @@
-package com.course.information;
+package com.course.Shopping;
 
 public class shoppingFunction {
 

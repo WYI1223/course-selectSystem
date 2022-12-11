@@ -1,6 +1,5 @@
 package com.user.information;
 //对Studens和Faculty类的一个测试程序
-import com.course.information.shopping;
 
 import java.util.Scanner;
 

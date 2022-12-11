@@ -39,7 +39,7 @@ import java.util.Date;
 
 public class Course implements Comparable, Serializable {
 
-    private String title,room;
+    private String title;
     private String AcademicLevel="Undergraduate";
     private int ID,capacity,availableSeats;
     private int credits;
@@ -60,13 +60,15 @@ public class Course implements Comparable, Serializable {
 
 //          文件位置
     private File path;
-    private Course preCourse;
+
     private boolean isAvailable;
     private String description;
     private String comments;
 
+    public Course() {
+    }
 
-    public Course(int ID,String title){
+    public Course(int ID, String title){
             this.path = new File("data\\course\\information\\"+ID+".txt");
             this.ID = ID;
             this.title = title;
@@ -86,7 +88,7 @@ public class Course implements Comparable, Serializable {
         return credits;
     }
 
-    public int getlevel() {return level;}
+    public int getlevel() {return Number;}
 
 
 
@@ -138,7 +140,6 @@ public class Course implements Comparable, Serializable {
     public String toString() {
         return "Course{" +
                 "title='" + title + '\'' +
-                ", room='" + room + '\'' +
                 ", AcademicLevel='" + AcademicLevel + '\'' +
                 ", ID=" + ID +
                 ", credits=" + credits +
@@ -158,7 +159,6 @@ public class Course implements Comparable, Serializable {
                 ", students=" + students +
                 ", StudentsList=" + StudentsList +
                 ", path=" + path +
-                ", preCourse=" + preCourse +
                 ", isAvailable=" + isAvailable +
                 '}';
     }
@@ -168,11 +168,6 @@ public class Course implements Comparable, Serializable {
 //        return super.toString();
 //    }
 
-
-
-    public Course getPreCourse() {
-        return preCourse;
-    }
 
     public int getCapacity() {
         return capacity;
@@ -230,17 +225,10 @@ public class Course implements Comparable, Serializable {
         this.students = students;
     }
 
-    public void setStudentsList(ArrayList studentsList) {
-        StudentsList = studentsList;
-    }
-
     public void setPath(File path) {
         this.path = path;
     }
 
-    public void setPreCourse(Course preCourse) {
-        this.preCourse = preCourse;
-    }
 
     public void setAvailable(boolean available) {
         isAvailable = available;
@@ -286,9 +274,6 @@ public class Course implements Comparable, Serializable {
 
     public void setSection(String section) {
         Section = section;
-    }
-    public void addProf(String prof){
-        this.prof[0]=prof;
     }
 
     public void setDescription(String description) {
