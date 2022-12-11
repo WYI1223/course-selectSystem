@@ -126,7 +126,9 @@ public class shopping implements Serializable {
             Scanner input = new Scanner(System.in);
             int choice = input.nextInt();
             if (0<=choice&&choice<=courseList.size()) {
+                System.out.println("choose the number to remove");
                 courseList.remove(choice);
+                System.out.println("remove successfully");
             }
             else {
                 break;

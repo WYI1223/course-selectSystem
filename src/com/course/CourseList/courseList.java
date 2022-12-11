@@ -87,9 +87,11 @@ public class courseList {
                 System.out.println("Enter 3 chose the () number course/Or quit");
                 int choice = input.nextInt();
                 if (choice == 3) {
+                    System.out.println("choose the number () to register");
                     int number = input.nextInt();
                     courseL.get(i*10+number).register();
                     shoppingcart.addCourse(courseL.get(i*10+number));
+                    System.out.println("register successfully!");
                 }
                 break;
             }
@@ -112,9 +114,11 @@ public class courseList {
                 i++;
             }
             else if (choice == 3) {
+                System.out.println("choose the number () to register");
                 int number = input.nextInt();
                 courseL.get(i*10+number).register();
                 shoppingcart.addCourse(courseL.get(i*10+number));
+                System.out.println("register successfully!");
             }
             else {
                 break;
