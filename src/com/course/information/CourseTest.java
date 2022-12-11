@@ -29,7 +29,6 @@ public class CourseTest {
 //        int Capacity = 18;
 //        Date StartTime = new Date(new BigInteger("1669815000000").longValue());
 //        Date EndTime = new Date(new BigInteger("1669817700000").longValue());
-//
 //        System.out.println(new Date(new BigInteger("1676264400000").longValue()));//start date
 //        System.out.println(new Date(new BigInteger("1685419200000").longValue()));//date
 //        System.out.println(new Date(new BigInteger("1669815000000").longValue()));//start time
