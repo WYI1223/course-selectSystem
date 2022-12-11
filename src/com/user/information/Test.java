@@ -1,12 +1,13 @@
 package com.user.information;
 //对Studens和Faculty类的一个测试程序
 
+import java.io.IOException;
 import java.util.Scanner;
 
 
 public class Test {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter you acount(Idnumber + firstname + lastname + grades + major):");
         int infor1 = input.nextInt();

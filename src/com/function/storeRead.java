@@ -11,15 +11,15 @@ public class storeRead {
 
     //single-------------------------
     //solo course Store to document
-    public static void serialize(Course course) throws IOException{
-            ObjectOutputStream objectOutputStream =
-                new ObjectOutputStream( new FileOutputStream( new File(course.getID()+course.getTitle()+".txt") ) );
-        objectOutputStream.writeObject( course );
-        objectOutputStream.close();
-
-        System.out.println("序列化成功！已经生成"+course.getID()+course.getTitle()+".txt"+"文件");
-        System.out.println("==============================================");
-    }
+//    public static void serialize(Course course) throws IOException{
+//            ObjectOutputStream objectOutputStream =
+//                new ObjectOutputStream( new FileOutputStream( new File(course.getID()+course.getTitle()+".txt") ) );
+//        objectOutputStream.writeObject( course );
+//        objectOutputStream.close();
+//
+//        System.out.println("序列化成功！已经生成"+course.getID()+course.getTitle()+".txt"+"文件");
+//        System.out.println("==============================================");
+//    }
     //solo course Read from document
     public static Course deserializeCourse(File path) throws IOException, ClassNotFoundException {
         ObjectInputStream objectInputStream =
@@ -29,6 +29,16 @@ public class storeRead {
 
         System.out.println("反序列化成功");
         return course;
+//        System.out.println(course);
+    }
+    public static Students deserializeStudent(File path) throws IOException, ClassNotFoundException {
+        ObjectInputStream objectInputStream =
+                new ObjectInputStream( new FileInputStream(path));
+        Students students= (Students) objectInputStream.readObject();
+        objectInputStream.close();
+
+        System.out.println("反序列化成功");
+        return students;
 //        System.out.println(course);
     }
     //single Faculty store and read
