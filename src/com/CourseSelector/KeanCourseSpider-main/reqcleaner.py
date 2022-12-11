@@ -43,8 +43,10 @@ def get_course_info_list() -> list:
             formatted_course = {
                 'id': int(course['Synonym']),  # 课程id，是指代该Section的唯一序列
                 'term': str(course['TermDisplay']),  # 课程学期，形如 'Spring 2022 Wenzhou'
-                'name': str(course['Course']['SubjectCode'] + '_' + course['Course']['Number']),  # 课程名称，形如 'ACCT_2210'
-                'title': str(course['Course']['Title']),  # 课程标题，形如 'PRINCIPLES OF ACCOUNTING II'
+                'Code':str(course['term']['Code']),
+                'SubjectCode': str(course['Course']['SubjectCode']),  # 课程名称，形如 'ACCT_2210'
+                'Number' : str(course['Course']['Number']),
+                'Title': str(course['Course']['Title']),  # 课程标题，形如 'PRINCIPLES OF ACCOUNTING II'
                 'section': str(course['Number']),  # 课程班级号，形如 'W01'
                 'prof': str(course['FacultyDisplay']),  # 列表！教授名称（可能不止一个人）
                 'days': str(meeting_info['days']),  # 形如[[1,3],[2]]，课程所在的工作日顺序，1对应星期一
