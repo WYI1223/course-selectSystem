@@ -31,15 +31,20 @@ import com.user.information.Faculty;
 import com.user.information.Students;
 
 import java.io.*;
+import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
 
 public class Course implements Comparable, Serializable {
 
-    private String code,title,room;
+    private String title,room;
     private String AcademicLevel="Undergraduate";
-    private int ID,credits,capacity,availableSeats;
+    private int ID,capacity,availableSeats;
+    private int credits;
+    private int Number;
+    private String Section;
 //        日期
     private Date startDate,endDate;
     private int[] Days;
@@ -47,8 +52,8 @@ public class Course implements Comparable, Serializable {
     private String startTime,endTime;
     private int[] requisites;
     private String Grading;
-    private int Capacity,Available;
-    private Faculty instructor;
+
+    private String[] prof;
     private int level;
     private Students students;
     private ArrayList StudentsList; //储存学生
@@ -57,12 +62,12 @@ public class Course implements Comparable, Serializable {
     private File path;
     private Course preCourse;
     private boolean isAvailable;
-
-    private static int[] allcourse;
+    private String description;
+    private String comments;
 
 
     public Course(int ID,String title){
-            this.path = new File("data\\course\\information\\"+ID+title+".txt");
+            this.path = new File("data\\course\\information\\"+ID+".txt");
             this.ID = ID;
             this.title = title;
     }
@@ -117,7 +122,7 @@ public class Course implements Comparable, Serializable {
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(this);
         oos.close();
-        System.out.println("序列化成功！已经生成"+getID()+getTitle()+".txt"+"文件");
+        System.out.println("序列化成功！已经生成"+getID()+".txt"+"文件");
         System.out.println("==============================================");
     }
 
@@ -125,18 +130,45 @@ public class Course implements Comparable, Serializable {
         return "Course ID: "+this.ID+'\''+
                 ",title: "+this.title+
                 ", credits: "+this.credits+
-                ", instructor: "+this.instructor+
+                ", instructor: "+this.prof[0]+
                 ", period: "+this.startDate+" - "+this.endDate;
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Course{" +
+                "title='" + title + '\'' +
+                ", room='" + room + '\'' +
+                ", AcademicLevel='" + AcademicLevel + '\'' +
+                ", ID=" + ID +
+                ", credits=" + credits +
+                ", capacity=" + capacity +
+                ", availableSeats=" + availableSeats +
+                ", Number=" + Number +
+                ", Section='" + Section + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", Days=" + Arrays.toString(Days) +
+                ", startTime='" + startTime + '\'' +
+                ", endTime='" + endTime + '\'' +
+                ", requisites=" + Arrays.toString(requisites) +
+                ", Grading='" + Grading + '\'' +
+                ", prof=" + Arrays.toString(prof) +
+                ", level=" + level +
+                ", students=" + students +
+                ", StudentsList=" + StudentsList +
+                ", path=" + path +
+                ", preCourse=" + preCourse +
+                ", isAvailable=" + isAvailable +
+                '}';
     }
 
-    public String getCode() {
-        return this.code;
-    }
+//    @Override
+//    public String toString() {
+//        return super.toString();
+//    }
+
+
 
     public Course getPreCourse() {
         return preCourse;
@@ -169,4 +201,101 @@ public class Course implements Comparable, Serializable {
     }
 
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public void setCredits(int credits) {
+        this.credits = credits;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+
+    public void setInstructor(String[] instructor) {
+        this.prof = instructor;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public void setStudents(Students students) {
+        this.students = students;
+    }
+
+    public void setStudentsList(ArrayList studentsList) {
+        StudentsList = studentsList;
+    }
+
+    public void setPath(File path) {
+        this.path = path;
+    }
+
+    public void setPreCourse(Course preCourse) {
+        this.preCourse = preCourse;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
+    }
+
+
+
+    public void setAvailableSeats(int availableSeats) {
+        this.availableSeats = availableSeats;
+    }
+
+    public void setStartDate(BigInteger startDate) {
+        this.startDate = new Date(startDate.longValue());
+    }
+
+    public void setEndDate(BigInteger startDate) {
+        this.endDate = new Date(startDate.longValue());
+    }
+
+    public void setDays(int[] days) {
+        Days = days;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public void setRequisites(int[] requisites) {
+        this.requisites = requisites;
+    }
+
+    public void setGrading(String grading) {
+        Grading = grading;
+    }
+
+    public void setNumber(int number) {
+        Number = number;
+    }
+
+    public void setSection(String section) {
+        Section = section;
+    }
+    public void addProf(String prof){
+        this.prof[0]=prof;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
 }
