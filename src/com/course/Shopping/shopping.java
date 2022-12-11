@@ -26,6 +26,11 @@ public class shopping implements Serializable {
     //3.是否重复修课
     //4.课程是否可用
 
+
+    public shopping(Students students) {
+        this.students = students;
+    }
+
     public boolean check() {
         boolean check1 = false;
         boolean check2 = false;
@@ -48,10 +53,9 @@ public class shopping implements Serializable {
     }
 
 
-
     //判断是否存在相同课程
     public boolean haveSameCourse(Course course) {
-        if (courseList==null)
+        if (courseList == null)
             return false;
         return courseList.contains(course);
     }
@@ -69,24 +73,31 @@ public class shopping implements Serializable {
     }
 
     //添加新课程
-    public void addCourse(Course course) {
+    public void addCourse(Course course) throws IOException {
         if (!haveSameCourse(course) && credits <= 19) {
             courseList.add(course);
+            students.addShoppingCartNumberSection(course.getID());
             credits += course.getCredits();
+            System.out.println("register successfully!");
+        }
+        else {
+            System.out.println("you already have this course in your shoppinglist");
         }
     }
+
     public void printcouselist() {
-        for (int i = 0; i < courseList.size(); i++){
+        for (int i = 0; i < courseList.size(); i++) {
             courseList.get(i).getInformation();
-    }
+        }
 
     }
 
 
     //删除课程
-    public void delCourse(Course course) {
+    public void delCourse(Course course) throws IOException {
         if (haveSameCourse(course)) {
             courseList.remove(course);
+            students.delShoppingCartNumberSection(course.getID());
             credits -= course.getCredits();
         } else {
             System.out.println(course.getTitle() + " is not exist in shopping cart.");
@@ -112,6 +123,49 @@ public class shopping implements Serializable {
     public int getCredits() {
         return credits;
     }
+
+
+    public void showCourse() throws IOException {
+        System.out.println("--------------------");
+        for (;;) {
+            if (this.credits==0){
+                System.out.println("your shopping list is empty, suggest you to register some courses");
+                break;
+            }
+            for (int i = 0; i < courseList.size(); i++) {
+                System.out.println(i + "." + courseList.get(i).getInformation());
+            }
+            System.out.println("Total grades are :"+this.credits);
+
+            System.out.println("choose the () number to remove or choose other to quit");
+            Scanner input = new Scanner(System.in);
+            int choice = input.nextInt();
+
+            if (0<=choice&&choice<=courseList.size()-1) {
+                System.out.println("choose the number to remove");
+                courseList.get(choice).addAvailableseats();
+                courseList.remove(choice);
+                this.students.delShoppingCartNumberSection(choice);
+                if (this.credits>=3){
+                    credits=credits-3;
+                    System.out.println("remove successfully");
+                } else if (this.credits<3) {
+                    System.out.println("you have no course to remove!");
+                }
+
+
+            }
+            else if (choice>courseList.size()){
+                break;
+            }
+        }
+        System.out.println("----------------------");
+    }
+
+
+
+
+
 
 
 

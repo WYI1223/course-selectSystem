@@ -9,10 +9,15 @@ package com.user.information;
 
 import com.course.information.Course;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
-import com.course.Shopping.shopping;
+import java.util.Arrays;
 
+import com.course.Shopping.shopping;
+import java.io.*;
 
 
 public class Students extends Member implements Serializable {
@@ -25,13 +30,26 @@ public class Students extends Member implements Serializable {
     private int creditsAvailable;
 
     //该学生的购物车
-    private shopping shoppingCart;
+    transient private shopping shoppingCart;
+    File file = new File("data\\Member\\Students\\"+id);
+    private ArrayList<Integer> shoppingCartNumber = new ArrayList<>();
 
     //已修课程
     private ArrayList<Course> coursefinished;
     //选择课程
     private ArrayList<Course> courseSelect;
 
+    public Students() {
+    }
+    public Students(int id,String fname,String lname,int grades,String major) throws IOException {
+        this.ID = id;
+        this.firstName = fname;
+        this.lastName = lname;
+        this.grade = grades;
+        this.major = major;
+        file = new File("data\\Member\\Students\\"+id);
+        serialize();
+    }
 
     //实现学生信息print（名字，id，专业，年级，总学分,课表）
     public String toString(){
@@ -40,16 +58,16 @@ public class Students extends Member implements Serializable {
                 ", Major: "+major+
                 ", Grade: "+grade+
                 ", Credits: "+creditsTotal+
-                ",shoppingCart: "+shoppingCart;
+                ", Shopping Cart Course ID: "+ shoppingCartNumber.toString();
     }
-    public Students(int id,String fname,String lname,int grades,String major){
-        this.ID = id;
-        this.firstName = fname;
-        this.lastName = lname;
-        this.grade = grades;
-        this.major = major;
-        this.shoppingCart = new shopping();
-        shoppingCart.setStudents(this);
+    public void serialize() throws IOException {
+        File path = new File(file+"\\students.txt");
+        FileOutputStream fos = new FileOutputStream(path);
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(this);
+        oos.close();
+//        System.out.println("序列化成功！已经生成"+getID()+".txt"+"文件");
+//        System.out.println("==============================================");
     }
 
     public boolean isComplete(Course course){
@@ -74,20 +92,37 @@ public class Students extends Member implements Serializable {
         else System.out.println("取消完成此课程");
     }
 
+    public void addShoppingCartNumberSection(int number) throws IOException {
+        if (!shoppingCartNumber.contains((Integer) number)) {
+            shoppingCartNumber.add(number);
+            serialize();
+        }
+    }
+    public void delShoppingCartNumberSection(int number) throws IOException {
+        Integer section = number;
+        shoppingCartNumber.remove(number);
+//        System.out.println(shoppingCartNumber);
+//        System.out.println(section);
+        serialize();
+    }
+
+    public ArrayList<Integer> getShoppingCartNumber() {
+        return shoppingCartNumber;
+    }
 
     public int getCreditsAvailable() {
         return creditsAvailable;
     }
 
     //将序号（）加入课程购物车
-    public void addShoppingCourse(Course i){
-        shoppingCart.addCourse(i);
-    }
+//    public void addShoppingCourse(Course i){
+//        shoppingCart.addCourse(i);
+//    }
 
     //购物车删除序号（）课程
-    public void delShoppingCourse(Course i){
-        shoppingCart.delCourse(i);
-    }
+//    public void delShoppingCourse(Course i){
+//        shoppingCart.delCourse(i);
+//    }
 
 
     public shopping getShoppingCart() {

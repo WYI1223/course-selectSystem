@@ -40,6 +40,7 @@ public class json2course {
             // CourseTest courseTest = gson.fromJson(json,CourseTest.class);
             System.out.println(courseTest.toString());
             Course course = new Course(courseTest.getId(), courseTest.getTitle());
+            course.setSubjectCode(courseTest.getSubjectCode());
             course.setNumber(Integer.parseInt(courseTest.getNumber()));
             course.setSection(courseTest.getSection());
             course.setInstructor(courseTest.getProf());
