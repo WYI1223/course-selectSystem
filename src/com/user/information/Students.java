@@ -171,6 +171,6 @@ public class Students extends Member implements Serializable {
     }
 
     public void setShoppingCart(shopping shoppingCart) {
-        Students.shoppingCart = shoppingCart;
+        this.shoppingCart = shoppingCart;
     }
 }

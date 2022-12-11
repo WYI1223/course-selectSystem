@@ -91,12 +91,18 @@ public class Course implements Comparable, Serializable {
     public Date getEndDate() {
         return endDate;
     }
-    public Date getStartTime() {
-        return startTime;
-    }
-    public Date getEndTime() {
-        return endTime;
-    }
+
+    /**
+     *
+     * public Date getStartTime() {
+     *         return startTime;
+     *     }
+     *     public Date getEndTime() {
+     *         return endTime;
+     *     }
+     * @return
+     */
+
 
     //comparable 接口实现
     @Override
