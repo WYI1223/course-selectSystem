@@ -48,10 +48,9 @@ public class shopping implements Serializable {
     }
 
 
-
     //判断是否存在相同课程
     public boolean haveSameCourse(Course course) {
-        if (courseList==null)
+        if (courseList == null)
             return false;
         return courseList.contains(course);
     }
@@ -75,10 +74,11 @@ public class shopping implements Serializable {
             credits += course.getCredits();
         }
     }
+
     public void printcouselist() {
-        for (int i = 0; i < courseList.size(); i++){
+        for (int i = 0; i < courseList.size(); i++) {
             courseList.get(i).getInformation();
-    }
+        }
 
     }
 
@@ -111,6 +111,35 @@ public class shopping implements Serializable {
     //查看当前购物车学分
     public int getCredits() {
         return credits;
+    }
+
+
+    public void showCourse() {
+        System.out.println("--------------------");
+        for (; ; ) {
+            for (int i = 0; i < courseList.size(); i++) {
+                System.out.println(i + "." + courseList.get(i).getInformation());
+            }
+            System.out.println("Total grades are :"+this.credits);
+
+            System.out.println("choose the () number to remove or choose other to quit");
+            Scanner input = new Scanner(System.in);
+            int choice = input.nextInt();
+            if (0<=choice&&choice<=courseList.size()) {
+                courseList.remove(choice);
+            }
+            else {
+                break;
+            }
+        }
+        System.out.println("----------------------");
+    }
+
+
+
+
+    public void remove(int choice){
+        courseList.remove(choice);
     }
 
 

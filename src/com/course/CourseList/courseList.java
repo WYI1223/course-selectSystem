@@ -73,11 +73,17 @@ public class courseList {
     public static void printcourselist(ArrayList<Course> courseL,shopping shoppingcart) {
         int i = 0;
         for (;;) {
+
             if (i*10+9>=courseL.size()) {
                 Scanner input = new Scanner(System.in);
+                //show course
+                System.out.println("----------------");
                 for (int j = 0;j<courseL.size()-i*10;j++){
                     System.out.println(j+"."+courseL.get(i * 10 + j));
                 }
+                System.out.println("----------------");
+
+                //give choice to do function
                 System.out.println("Enter 3 chose the () number course/Or quit");
                 int choice = input.nextInt();
                 if (choice == 3) {
@@ -87,9 +93,14 @@ public class courseList {
                 }
                 break;
             }
+            //show course
+            System.out.println("----------------");
             for (int j = 0;j<10;j++){
                 System.out.println(j+"."+courseL.get(i * 10 + j));
             }
+            System.out.println("----------------");
+
+            //give choice to do funtcion
             Scanner input = new Scanner(System.in);
             System.out.println("1.last page 2.next page 3.choose the () number course to register 4.quit");
             int choice = input.nextInt();

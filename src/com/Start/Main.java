@@ -1,4 +1,4 @@
-package com;
+package com.Start;
 
 import com.course.information.Course;
 import com.user.information.Students;

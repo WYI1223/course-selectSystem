@@ -11,38 +11,10 @@ import com.course.information.Course;
 import static com.course.CourseList.courseList.*;
 
 public class Function {
-    public static void checkShoppingList(shopping shoppingCart,ArrayList<Course> courseList) throws IOException, ClassNotFoundException {
+    public static void checkShoppingList(shopping shoppingCart) throws IOException, ClassNotFoundException {
 
-        Scanner input = new Scanner(System.in);
+        shoppingCart.showCourse();
 
-        //打印当前购物车
-        shoppingCart.printcouselist();
-        //显示购物车学分
-        System.out.println(shoppingCart.reCredits());
-
-        //选择功能1.删除（）课程2.浏览课程表3.返回首页
-        System.out.println("choose the function you want to do:\n1.remove x(serial number) course\n2.check course list\n3.return to menu");
-        int choice = input.nextInt();
-        switch(choice){
-            case 1:
-                for(;;){
-                    //当前购物车课程个数
-                    int i = shoppingCart.toString().length() + 1;
-
-                    //购物车内第x位课程
-                    System.out.println("which course you want to remove(serial number)");
-                    int x = input.nextInt();
-                    if(x < 0 || x > i){
-                        System.out.println("invalid number");
-                    }
-                    else shoppingCart.delCourse(shoppingCart.getCourseInfo(x));break;
-                }
-                break;
-
-            case 2:checkCourseList(courseList,shoppingCart);break;
-            case 3:break;
-        }
-        return;
     }
     public static void checkCourseList(ArrayList<Course> courseList,shopping shoppingcart) throws IOException, ClassNotFoundException {
         Scanner input = new Scanner(System.in);

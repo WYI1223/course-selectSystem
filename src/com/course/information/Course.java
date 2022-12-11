@@ -283,4 +283,6 @@ public class Course implements Comparable, Serializable {
     public void setComments(String comments) {
         this.comments = comments;
     }
+
+
 }
