@@ -12,6 +12,7 @@ import java.util.Scanner;
 import java.io.Serializable;
 import java.util.ArrayList;
 import com.course.information.shopping;
+import com.course.information.courseList;
 
 
 public class Students extends Member implements Serializable {
@@ -24,7 +25,7 @@ public class Students extends Member implements Serializable {
     private int creditsAvailable;
 
     //该学生的购物车
-    private static shopping shoppingCart;
+    private shopping shoppingCart;
 
     //已修课程
     private ArrayList<Course> courseList;
@@ -32,13 +33,14 @@ public class Students extends Member implements Serializable {
     private Course[] courseSelect;
 
 
-    //实现学生信息print（名字，id，专业，年级，总学分）
+    //实现学生信息print（名字，id，专业，年级，总学分,课表）
     public String toString(){
         return "Student name: "+firstName+" "+lastName+'\''+
                 ", ID: "+ID+
                 ", Major: "+major+
                 ", Grade: "+grade+
-                ", Credits: "+creditsTotal;
+                ", Credits: "+creditsTotal+
+                ",shoppingCart: "+shoppingCart;
     }
     public Students(int id,String fname,String lname,int grades,String major){
         this.ID = id;
@@ -85,7 +87,7 @@ public class Students extends Member implements Serializable {
         shoppingCart.delCourse(i);
     }
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
         //学生可在此程序运行的方法
         //1.添加课程（课程会筛查重复时间以及内容）
         //2.删除课程
@@ -114,7 +116,7 @@ public class Students extends Member implements Serializable {
         Scanner input = new Scanner(System.in);
 
         //新建shopping对象(此对象涵盖全课表)
-        shopping shop = new shopping();
+        courseList shop = new courseList();
 
         //选择功能1.level排序2.学分排序3.可用座位排序4.时间排序
         System.out.println("chose the function you want to do:\n1.according to level\n2.according to credits\n3.according to available seats\n4.according to date");
@@ -128,15 +130,14 @@ public class Students extends Member implements Serializable {
         }
     }
 
-    public static void checkShoppingList(){
+    public  void checkShoppingList(){
 
         Scanner input = new Scanner(System.in);
 
         //打印当前购物车
-        System.out.println(shoppingCart.toString());
-
+        shoppingCart.printcouselist();
         //显示购物车学分
-        System.out.println(shoppingCart.getCredits());
+        System.out.println(shoppingCart.reCredits());
 
         //选择功能1.删除（）课程2.浏览课程表3.返回首页
         System.out.println("choose the function you want to do:\n1.remove x(serial number) course\n2.check course list\n3.return to menu");
