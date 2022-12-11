@@ -98,8 +98,8 @@ public class CourseTest {
     }
 
     public String toString() {
-        return this.id+""+this.term+""
-                +this.SubjectCode +""+this.title+""+this.section+""+"\n"
+        return this.id+" "+this.term+" "
+                +this.SubjectCode +" "+this.title+" "+this.section+" "+"\n"
                 +this.days[0][0]+"\n"+this.days[0][1]+"\n"+this.capacity+this.credits+this.startdate[0];
     }
 }
