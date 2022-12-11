@@ -40,8 +40,8 @@ import java.util.Date;
 public class Course implements Comparable, Serializable {
 
     private String title;
-    private String AcademicLevel="Undergraduate";
     private int ID,capacity,availableSeats;
+    private String subjectCode;
     private int credits;
     private int Number;
     private String Section;
@@ -129,10 +129,9 @@ public class Course implements Comparable, Serializable {
     }
 
     public String getInformation(){
-        return "Course ID: "+this.ID+'\''+
-                ",title: "+this.title+
-                ", credits: "+this.credits+
-                ", instructor: "+this.prof[0]+
+        return "Course Section: "+this.subjectCode+"_"+this.Number+"_"+this.Section+'\''+
+                ",title: "+this.title+ ", credits: "+this.credits+ ", instructor: "+ Arrays.toString(prof)+
+                ",Time: "+this.startTime+"-"+this.endTime+"Days: "+ Arrays.toString(Days)+
                 ", period: "+this.startDate+" - "+this.endDate;
     }
 
@@ -140,7 +139,7 @@ public class Course implements Comparable, Serializable {
     public String toString() {
         return "Course{" +
                 "title='" + title + '\'' +
-                ", AcademicLevel='" + AcademicLevel + '\'' +
+                ", SubjectCode='" + subjectCode + '\'' +
                 ", ID=" + ID +
                 ", credits=" + credits +
                 ", capacity=" + capacity +
@@ -284,5 +283,7 @@ public class Course implements Comparable, Serializable {
         this.comments = comments;
     }
 
-
+    public void setSubjectCode(String subjectCode) {
+        this.subjectCode = subjectCode;
+    }
 }
