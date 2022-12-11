@@ -17,17 +17,21 @@ def get_course_info_list() -> list:
         # !!!注意： 建筑系的STU无法通过课程的Days，StartTime等字段获取，建筑系的课程会出现days中有一个空子列表，time中有一个[None, None]的子列表
         # 建筑系课程工作室时段无法正常显示。建筑系课程特殊，暂不考虑。
         def get_meeting_info(course_info: dict) -> dict:
+            
             days = []
             starttime=[]
             endtime = []
             startdate = []
             enddate = []
+            code = []
+            
             res = {
                 'days': days,
                 'starttime':starttime,
                 'endtime':endtime,
                 'startdate':startdate,
-                'enddate':enddate
+                'enddate':enddate,
+                'code':code
             }
             for meeting_time in course_info['FormattedMeetingTimes']:
                 res['days'].append(meeting_time['Days'])
@@ -36,13 +40,19 @@ def get_course_info_list() -> list:
                 res['startdate'].append(meeting_time['StartDate'])
                 res['enddate'].append(meeting_time['EndDate'])
                 
+            for term_time in course_info['Term']:
+                res['code'].append(term_time['Code']) 
+                   
             return res
-
-        for course in info['Sections']:
+        
+        
+        for course, term in info['Sections']:
             meeting_info = get_meeting_info(course)
+            term_info = get_meeting_info(term)
             formatted_course = {
                 'id': int(course['Synonym']),  # 课程id，是指代该Section的唯一序列
                 'term': str(course['TermDisplay']),  # 课程学期，形如 'Spring 2022 Wenzhou'
+                'termcode': str(term_info['TermDisplay']),  # 课程学期，形如 'Spring 2022 Wenzhou'
                 'name': str(course['Course']['SubjectCode'] + '_' + course['Course']['Number']),  # 课程名称，形如 'ACCT_2210'
                 'title': str(course['Course']['Title']),  # 课程标题，形如 'PRINCIPLES OF ACCOUNTING II'
                 'section': str(course['Number']),  # 课程班级号，形如 'W01'
