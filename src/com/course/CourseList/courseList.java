@@ -12,6 +12,9 @@ import java.util.Scanner;
 import static com.function.storeRead.deserializeCourse;
 
 public class courseList {
+
+    //更新课程表课程
+    //将课程读入arraylist中
     public static ArrayList<Course> updataCourse() throws IOException, ClassNotFoundException {
         ArrayList<Course> courseList = new ArrayList<>();
         int number = 26445;
