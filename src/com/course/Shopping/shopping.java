@@ -26,6 +26,8 @@ public class shopping implements Serializable {
     //3.是否重复修课
     //4.课程是否可用
 
+
+
     public boolean check() {
         boolean check1 = false;
         boolean check2 = false;
@@ -128,7 +130,13 @@ public class shopping implements Serializable {
             if (0<=choice&&choice<=courseList.size()) {
                 System.out.println("choose the number to remove");
                 courseList.remove(choice);
-                System.out.println("remove successfully");
+                if (this.credits>=3){
+                    credits=credits-3;
+                    System.out.println("remove successfully");
+                } else if (this.credits<3) {
+                    System.out.println("you have no course to remove!");
+                }
+
             }
             else {
                 break;
