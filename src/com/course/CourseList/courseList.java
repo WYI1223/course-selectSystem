@@ -92,9 +92,13 @@ public class courseList {
                 if (choice == 3) {
                     System.out.println("choose the number () to register");
                     int number = input.nextInt();
+                    if (shoppingcart.getCredits()<16){
                     courseL.get(i*10+number).register();
                     shoppingcart.addCourse(courseL.get(i*10+number));
-                    System.out.println("register successfully!");
+                    System.out.println("register successfully!");}
+                    else {
+                        System.out.println("your credits are overflow!");
+                    }
                 }
                 break;
             }
@@ -119,9 +123,13 @@ public class courseList {
             else if (choice == 3) {
                 System.out.println("choose the number () to register");
                 int number = input.nextInt();
-                courseL.get(i*10+number).register();
-                shoppingcart.addCourse(courseL.get(i*10+number));
-                System.out.println("register successfully!");
+                if (shoppingcart.getCredits()<16){
+                    courseL.get(i*10+number).register();
+                    shoppingcart.addCourse(courseL.get(i*10+number));
+                    System.out.println("register successfully!");}
+                else {
+                    System.out.println("your credits are overflow!");
+                }
             }
             else {
                 break;
