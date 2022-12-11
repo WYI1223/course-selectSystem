@@ -10,6 +10,8 @@ import com.user.information.Students;
 
 import com.course.information.Course;
 
+import static com.course.Shopping.shoppingFunction.conflict;
+
 public class shopping implements Serializable {
 
     private int credits = 0;
@@ -52,6 +54,18 @@ public class shopping implements Serializable {
         return check1 && check2;
     }
 
+    public static void sortDate(ArrayList<Course> list) throws IOException {
+        list.sort(new Comparator<Course>() {
+            @Override
+            public int compare(Course o1, Course o2) {
+                return o1.getStartTime().compareTo(o2.getStartTime());
+            }
+        });
+    }
+    public ArrayList<Course> getcourselist(){
+        return courseList;
+    }
+
 
     //判断是否存在相同课程
     public boolean haveSameCourse(Course course) {
@@ -74,14 +88,14 @@ public class shopping implements Serializable {
 
     //添加新课程
     public void addCourse(Course course) throws IOException {
-        if (!haveSameCourse(course) && credits <= 19) {
+        if (!haveSameCourse(course) && credits <= 19&&conflict(course,this.courseList)) {
             courseList.add(course);
             students.addShoppingCartNumberSection(course.getID());
             credits += course.getCredits();
             System.out.println("register successfully!");
         }
         else {
-            System.out.println("you already have this course in your shoppinglist");
+            System.out.println("you already have this course in your shoppinglist or you have course that conflict with the present course");
         }
     }
 

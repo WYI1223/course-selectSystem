@@ -122,7 +122,9 @@ public class Course implements Comparable, Serializable {
             return -1;
     }
 
-
+    public int [] getDays(){
+        return Days;
+    }
     //对象序列化的实现
     public void serialize() throws IOException {
         FileOutputStream fos = new FileOutputStream(path);
