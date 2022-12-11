@@ -32,7 +32,7 @@ public class Students extends Member implements Serializable {
     //该学生的购物车
     transient private shopping shoppingCart;
     File file = new File("data\\Member\\Students\\"+id);
-    private int[] shoppingCartNumber;
+    private ArrayList<Integer> shoppingCartNumber;
 
     //已修课程
     private ArrayList<Course> coursefinished;
@@ -58,7 +58,7 @@ public class Students extends Member implements Serializable {
                 ", Major: "+major+
                 ", Grade: "+grade+
                 ", Credits: "+creditsTotal+
-                ", Shopping Cart Course ID: "+ Arrays.toString(shoppingCartNumber);
+                ", Shopping Cart Course ID: "+ shoppingCartNumber.toString();
     }
     public void serialize() throws IOException {
         File path = new File(file+"\\students.txt");
@@ -90,6 +90,13 @@ public class Students extends Member implements Serializable {
             coursefinished.remove(i);
         }
         else System.out.println("取消完成此课程");
+    }
+
+    public void addShoppingCartNumberSection(int number){
+        shoppingCartNumber.add(number);
+    }
+    public void delShoppingCartNumberSection(int number){
+        shoppingCartNumber.remove(number);
     }
 
 
