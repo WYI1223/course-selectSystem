@@ -121,12 +121,21 @@ public class Course implements Comparable, Serializable {
         System.out.println("==============================================");
     }
 
-    public String toString(){
+    public String getInformation(){
         return "Course ID: "+this.ID+'\''+
                 ",title: "+this.title+
                 ", credits: "+this.credits+
                 ", instructor: "+this.instructor+
                 ", period: "+this.startDate+" - "+this.endDate;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
+    public String getCode() {
+        return this.code;
     }
 
     public Course getPreCourse() {

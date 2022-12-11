@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 import com.user.information.Students;
-import com.course.information.Sort;
+
 import com.course.information.Course;
 
 public class shopping {
@@ -14,6 +14,7 @@ public class shopping {
     private int credits;
     private String term;
     private String course;
+    private ArrayList<String> codeList;
     private Students students;
 
     private ArrayList<Course> courseList;
@@ -46,6 +47,7 @@ public class shopping {
     }
 
 
+
     //判断是否存在相同课程
     public boolean haveSameCourse(Course course) {
         if (courseList.contains(course))
@@ -72,6 +74,13 @@ public class shopping {
             credits += course.getCredits();
         }
     }
+    public void printcouselist() {
+        for (int i = 0; i < courseList.size(); i++){
+            courseList.get(i).getInformation();
+    }
+
+    }
+
 
     //删除课程
     public void delCourse(Course course) {
@@ -103,9 +112,7 @@ public class shopping {
         return credits;
     }
 
-    public String toString() {
-        return "You have these courses in your cart: " + courseList;
-    }
+
 
     //实现在不考虑冲突的情况下，注册所有购物车内课程
     public void register() {
@@ -115,48 +122,7 @@ public class shopping {
 
     }
 
-    public void sortCre() {
-        courseList.sort(new Comparator<Course>() {
-            @Override
-            public int compare(Course o1, Course o2) {
-                return o1.getCredits() - o2.getCredits();
-            }
-        });
-        printcourselist(courseList);
 
-    }
-
-    public void sortSeat() {
-        courseList.sort(new Comparator<Course>() {
-            @Override
-            public int compare(Course o1, Course o2) {
-                return o1.getAvailableSeats() - o2.getAvailableSeats();
-            }
-        });
-        printcourselist(courseList);
-    }
-
-    public void sortDate() {
-        courseList.sort(new Comparator<Course>() {
-            @Override
-            public int compare(Course o1, Course o2) {
-                return o1.getStartDate().compareTo(o2.getStartDate());
-            }
-        });
-
-        printcourselist(courseList);
-
-    }
-
-    public void sortLevel() {
-        courseList.sort(new Comparator<Course>() {
-            @Override
-            public int compare(Course o1, Course o2) {
-                return o1.getlevel() - o2.getlevel();
-            }
-        });
-        printcourselist(courseList);
-    }
 
     // public void bubbleSort(int [] arr,ArrayList<Course> list){
 //        int n = arr.length;
@@ -180,31 +146,6 @@ public class shopping {
     //2.下一页
     //3.将user输入的序号所指课程加入购物车
     //4.返回操作的首页
-    public void printcourselist(ArrayList<Course> courseL) {
-        int i = 0;
-        for (;;) {
-            for (int j = 0;j<10;j++){
-            System.out.println(j+"."+courseL.get(i * 10 + j));
-            }
-            Scanner input = new Scanner(System.in);
-            System.out.println("1.last page 2.next page 3.choose the () number course to register 4.quit");
-            int choice = input.nextInt();
-            if (choice == 1&&i!=0) {
-                i++;
-            } else if (choice == 2) {
-                i--;
-            } else if (choice == 3) {
-                int number = input.nextInt();
-                courseL.get(i*10+number).register();
-            } else if (i*10+9>=courseL.size()) {
-                break;
-            } else {
-                break;
-            }
-
-        }
-
-    }
 
 
 }
