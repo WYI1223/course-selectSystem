@@ -123,6 +123,10 @@ public class shopping implements Serializable {
     public void showCourse() {
         System.out.println("--------------------");
         for (;;) {
+            if (this.credits==0){
+                System.out.println("your shopping list is empty, suggest you to register some courses");
+                break;
+            }
             for (int i = 0; i < courseList.size(); i++) {
                 System.out.println(i + "." + courseList.get(i).getInformation());
             }
@@ -131,11 +135,8 @@ public class shopping implements Serializable {
             System.out.println("choose the () number to remove or choose other to quit");
             Scanner input = new Scanner(System.in);
             int choice = input.nextInt();
-            if (courseList.isEmpty()){
-                System.out.println("your shopping list is empty, suggest you to register some courses");
-                break;
-            }
-            else if (0<=choice&&choice<=courseList.size()) {
+
+            if (0<=choice&&choice<=courseList.size()) {
                 System.out.println("choose the number to remove");
                 courseList.remove(choice);
                 if (this.credits>=3){
