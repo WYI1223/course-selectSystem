@@ -1,4 +1,4 @@
-package com.course.information;
+package com.course.json2data;
 
 import com.fasterxml.jackson.databind.*;
 
