@@ -1,7 +1,9 @@
 package com.function;
 
 import com.course.information.Course;
+import com.course.information.shopping;
 import com.user.information.Member;
+import com.user.information.Students;
 
 import java.io.*;
 
@@ -50,9 +52,25 @@ public class storeRead {
     //single Students store and read
 
     //Shopping cart store
+    public static void serialize(shopping shopping) throws IOException{
+        ObjectOutputStream objectOutputStream =
+                new ObjectOutputStream( new FileOutputStream( new File(shopping.getStudents()+"ShoppingCart.txt") ) );
+        objectOutputStream.writeObject(shopping);
+        objectOutputStream.close();
 
+        System.out.println("序列化成功！已经生成"+shopping.getStudents()+"ShoppingCart.txt"+"文件");
+        System.out.println("==============================================");
+    }
     //Shopping cart read
+    public static void deserializeShopping(Students student) throws IOException, ClassNotFoundException {
+        ObjectInputStream objectInputStream =
+                new ObjectInputStream( new FileInputStream( new File("data\\shopping\\information\\"+student.getName()+"ShoppingCart.txt") ) );
+        student.setShoppingCart((shopping)objectInputStream.readObject() ) ;
+        objectInputStream.close();
 
+        System.out.println("反序列化结果为：");
+        System.out.println();
+    }
 
 
     //all--------------------------------

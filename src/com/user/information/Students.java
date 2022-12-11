@@ -48,6 +48,8 @@ public class Students extends Member implements Serializable {
         this.lastName = lname;
         this.grade = grades;
         this.major = major;
+        this.shoppingCart = new shopping();
+        shoppingCart.setStudents(this);
     }
 
     public boolean isComplete(Course course){
@@ -162,5 +164,13 @@ public class Students extends Member implements Serializable {
             case 3:break;
         }
         return;
+    }
+
+    public shopping getShoppingCart() {
+        return shoppingCart;
+    }
+
+    public void setShoppingCart(shopping shoppingCart) {
+        Students.shoppingCart = shoppingCart;
     }
 }
