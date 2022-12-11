@@ -82,7 +82,7 @@ public class courseList {
                 //show course
                 System.out.println("----------------");
                 for (int j = 0;j<courseL.size()-i*10;j++){
-                    System.out.println(j+"."+courseL.get(i * 10 + j));
+                    System.out.println(j+"."+courseL.get(i * 10 + j).getInformation());
                 }
                 System.out.println("----------------");
 
@@ -92,13 +92,14 @@ public class courseList {
                 if (choice == 3) {
                     System.out.println("choose the number () to register");
                     int number = input.nextInt();
-                    if (shoppingcart.getCredits()<16){
+                    if (shoppingcart.getCredits()<16&&courseL.get(i*10+number).getAvailableSeats()>0){
                     courseL.get(i*10+number).register();
+
                     shoppingcart.addCourse(courseL.get(i*10+number));
                     continue;
                     }
                     else {
-                        System.out.println("your credits are overflow!");
+                        System.out.println("your credits are overflow or there is no avalable seats in the class!");
                     }
                 }
                 else if (choice!=3){
@@ -108,7 +109,7 @@ public class courseList {
             //show course
             System.out.println("----------------");
             for (int j = 0;j<10;j++){
-                System.out.println(j+"."+courseL.get(i * 10 + j));
+                System.out.println(j+"."+courseL.get(i * 10 + j).getInformation());
             }
             System.out.println("----------------");
 
@@ -130,8 +131,9 @@ public class courseList {
             else if (choice == 3) {
                 System.out.println("choose the number () to register");
                 int number = input.nextInt();
-                if (shoppingcart.getCredits()<16){
+                if (shoppingcart.getCredits()<16&&courseL.get(i*10+number).getAvailableSeats()>0){
                     courseL.get(i*10+number).register();
+
                     shoppingcart.addCourse(courseL.get(i*10+number));
                    }
                 else {

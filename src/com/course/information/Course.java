@@ -90,6 +90,10 @@ public class Course implements Comparable, Serializable {
 
     public int getlevel() {return Number;}
 
+    public void addAvailableseats(){
+        availableSeats++;
+    }
+    
 
 
     public Date getStartDate() {

@@ -160,6 +160,7 @@ public class shopping implements Serializable {
 
     public void remove(int choice){
         courseList.remove(choice);
+        courseList.get(choice).addAvailableseats();
     }
 
 
