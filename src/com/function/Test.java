@@ -6,13 +6,17 @@ import com.user.information.Students;
 import java.io.File;
 import java.io.IOException;
 
-import static com.function.storeRead.deserializeCourse;
-import static com.function.storeRead.deserializeMember;
+import static com.function.storeRead.*;
 
 public class Test {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         Students CYC = new Students(1194100, "Cai", "Yingchao", 2, "CPS");
-        CYC.serializeMember();
-        deserializeMember(CYC);
+        System.out.println(CYC.getShoppingCart().getCredits());
+        System.out.println("1done");
+        CYC.getShoppingCart().serializeShopping();
+        deserializeShopping(CYC);
+
+
+
     }
 }

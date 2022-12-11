@@ -1,6 +1,7 @@
 package com.course.information;
 //课程购物车
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Scanner;
@@ -9,9 +10,9 @@ import com.user.information.Students;
 
 import com.course.information.Course;
 
-public class shopping {
+public class shopping implements Serializable {
 
-    private int credits;
+    private int credits = 0;
     private String term;
     private String course;
     private ArrayList<String> codeList;
@@ -147,6 +148,25 @@ public class shopping {
     //3.将user输入的序号所指课程加入购物车
     //4.返回操作的首页
 
+    public Students getStudents() {
+        return students;
+    }
 
+    public void serializeShopping() throws IOException {
+        File path1 = new File("data\\Shopping\\information\\");
+        path1.mkdirs();
+        File path = new File("data\\Shopping\\information\\"+getStudents().getName()+"ShoppingCart.txt");
+        ObjectOutputStream objectOutputStream =
+                new ObjectOutputStream( new FileOutputStream(path));
+        objectOutputStream.writeObject(this);
+        objectOutputStream.close();
+
+        System.out.println("序列化成功！已经生成"+getStudents().getName()+"ShoppingCart.txt"+"文件");
+        System.out.println("==============================================");
+    }
+
+    public void setStudents(Students students) {
+        this.students = students;
+    }
 }
 
