@@ -31,17 +31,17 @@ public class storeRead {
     //single Faculty store and read
     public static void serialize(Member member) throws IOException{
         ObjectOutputStream objectOutputStream =
-                new ObjectOutputStream( new FileOutputStream( new File("member.txt") ) );
+                new ObjectOutputStream( new FileOutputStream( new File(member.getID()+member.getName()+".txt") ) );
         objectOutputStream.writeObject( member );
         objectOutputStream.close();
 
-        System.out.println("序列化成功！已经生成member.txt文件");
+        System.out.println("序列化成功！已经生成"+member.getID()+member.getName()+".txt"+"文件");
         System.out.println("==============================================");
     }
-    public static void deserializeMember(  ) throws IOException, ClassNotFoundException {
+    public static void deserializeMember(Member member) throws IOException, ClassNotFoundException {
         ObjectInputStream objectInputStream =
-                new ObjectInputStream( new FileInputStream( new File("member.txt") ) );
-        Member member = (Member) objectInputStream.readObject();
+                new ObjectInputStream( new FileInputStream( new File("data\\member\\information\\"+member.getID()+""+member.getName()+".txt") ) );
+        member = (Member) objectInputStream.readObject();
         objectInputStream.close();
 
         System.out.println("反序列化结果为：");

@@ -31,6 +31,9 @@ public class Students extends Member implements Serializable {
     //选择课程
     private Course[] courseSelect;
 
+    public int getId() {
+        return id;
+    }
 
     //实现学生信息print（名字，id，专业，年级，总学分）
     public String toString(){

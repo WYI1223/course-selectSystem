@@ -1,5 +1,8 @@
 package com.course.UI;
 
+/**
+ * 生成项目中所有的菜单
+ */
 public class Menu {
     //主界面
     public void mainMenu() {

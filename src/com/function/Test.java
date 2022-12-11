@@ -1,16 +1,18 @@
 package com.function;
 
 import com.course.information.Course;
+import com.user.information.Students;
 
 import java.io.File;
 import java.io.IOException;
 
 import static com.function.storeRead.deserializeCourse;
+import static com.function.storeRead.deserializeMember;
 
 public class Test {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        Course course1 = new Course(111, "CPS2231");
-        course1.serialize();
-        deserializeCourse(course1);
+        Students CYC = new Students(1194100, "Cai", "Yingchao", 2, "CPS");
+        CYC.serializeMember();
+        deserializeMember(CYC);
     }
 }
