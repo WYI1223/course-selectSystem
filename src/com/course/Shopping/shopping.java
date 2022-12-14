@@ -169,7 +169,7 @@ public class shopping implements Serializable {
 
 
             }
-            else if (choice>courseList.size()){
+            else if (choice>courseList.size()-1){
                 break;
             }
         }

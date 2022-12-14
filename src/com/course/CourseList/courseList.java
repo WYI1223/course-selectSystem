@@ -24,7 +24,7 @@ public class courseList {
             File file = new File("Data\\Course\\information\\"+number+++".txt");
             if(!file.isFile())
                 continue;
-            Course course = deserializeCourse(file);
+            Course course = deserializeCourse(file);//将反序列化的内容存入到course里面
             courseList.add(course);
 //            System.out.println(course.toString());
         }
@@ -115,7 +115,7 @@ public class courseList {
 
             //give choice to do funtcion
             Scanner input = new Scanner(System.in);
-            System.out.println("1.last page 2.next page 3.choose the () number course to register 4.quit");
+            System.out.println("1.last page 2.next page 3.choose the () number course to register 4.show more information of () course 5.quit");
             int choice = input.nextInt();
 
             if (choice == 1&&i!=0) {
@@ -139,6 +139,13 @@ public class courseList {
                 else {
                     System.out.println("your credits are overflow!");
                 }
+            }
+            else if (choice == 4){
+                System.out.println("Choose the course your want to see more information");
+                int number1 = input.nextInt();
+                System.out.println("----------------");
+                System.out.println(courseL.get(i*10+number1).toString());
+                System.out.println("----------------");
             }
             else {
                 break;
