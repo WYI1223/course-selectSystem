@@ -93,13 +93,13 @@ public class courseList {
                     System.out.println("choose the number () to register");
                     int number = input.nextInt();
                     if (shoppingcart.getCredits()<16&&courseL.get(i*10+number).getAvailableSeats()>0){
-                    courseL.get(i*10+number).register();
+                        courseL.get(i*10+number).register();
 
-                    shoppingcart.addCourse(courseL.get(i*10+number));
-                    continue;
+                        shoppingcart.addCourse(courseL.get(i*10+number));
+                        continue;
                     }
                     else {
-                        System.out.println("your credits are overflow or there is no avalable seats in the class!");
+                        System.out.println("your credits are overflow or there is no available seats in the class!");
                     }
                 }
                 else if (choice!=3){
@@ -137,7 +137,7 @@ public class courseList {
                     shoppingcart.addCourse(courseL.get(i*10+number));
                    }
                 else {
-                    System.out.println("your credits are overflow!");
+                    System.out.println("your credits are overflow or there is no available seats in the class!");
                 }
             }
             else if (choice == 4){
